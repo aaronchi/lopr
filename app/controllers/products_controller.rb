@@ -1,6 +1,7 @@
 class ProductsController < ApplicationController
   
   inherit_resources
+  before_filter :authenticate_user!, :only => :buy
   
   def buy
     #TODO: Set any session vars here if we need to
@@ -10,11 +11,12 @@ class ProductsController < ApplicationController
   def callback
     #raise params.inspect
     Order.where(:order_id => params['orderID']).first_or_create({
+      :user_id => current_user.id,
       :product_id => params['plist'],
       :total => params['Total'],
       :status => params['status']
     }, :without_protection => true)
-    redirect_to root_path
+    redirect_to thanks_path
   end
   
   def download

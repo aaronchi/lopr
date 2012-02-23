@@ -1,0 +1,12 @@
+<% content_for :slider do %>
+  <%= render 'preview' %>
+<% end %>
+
+<h2 class="title" style="text-align: center;">Congratulations, you are registered!</h2>
+<p class="large">
+  
+  Hello, <%= current_user.name %>. Get ready for an amazing conference.
+</p>
+<div class="woo-sc-hr"></div>
+<%= render 'speakers' %>
+<%= render 'sponsors' %>

@@ -6,6 +6,8 @@ time = Time.new(2012,4,1,22,00,0)
   e = Factory.build(:event, :name => "Teleconference #{i}", :start_time => time, :end_time => time+1.hour)
   e.speaker = Factory.build(:speaker)
   e.save
+  s = e.speaker
+  Factory.create(:product, :speaker => s)
   time = time + 1.day
 end
 12.times {Factory.create(:sponsor)}

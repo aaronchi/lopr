@@ -3,7 +3,7 @@
     <ul class="nav fr">
       <% if current_user %>
       <li>
-        <%= link_to current_user.name, "#" %>
+        <%= link_to current_user.name, edit_user_registration_path %>
       </li>
       <li>
         <%= link_to 'Logout', destroy_user_session_path, :method => :delete %>
@@ -21,7 +21,7 @@
       <div class="menu-top-menu-container">
         <ul id="menu-top-menu" class="menu">
           <li>
-            <a href="#">page</a>
+            <a href="/">Home</a>
           </li>
         </ul>
       </div>

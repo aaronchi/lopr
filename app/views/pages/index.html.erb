@@ -1,7 +1,6 @@
 <% content_for :slider do %>
-  <%= render 'slider' %>
+  <%= render 'signup' %>
 <% end %>
-
 
 <h2 class="title" style="text-align: center;">The Most Incredible Teleconference Ever! No, Really!</h2>
 <%= simple_form_for(User.new, :as => :user, :url => registration_path(:user)) do |f| %>
@@ -25,31 +24,5 @@
   </div>
 </div>
 <div class="woo-sc-hr"></div>
-<h2 class="subTitle">An Amazing Lineup of 25 Relationship Experts</h2>
-<div class="bonusBox">
-  <h3>Plus Special Bonus Offers Available Only to Participants</h3>
-  <% Speaker.all.each_with_index do |speaker, i| %>
-  <% if i % 5 == 0 && i !=0%> <div class="woo-sc-divider"></div>
-  <% end %>
-  <div class="fivecol-one<% if i % 5 == 4 %> last<% end %>">
-    <div class="bonusItem">
-      <%= image_tag "http://placehold.it/150x90", :class => 'noborder' %> <h5><%= speaker.name %></h5>
-      <p>
-        <%= speaker.bio %>
-      </p>
-    </div>
-  </div>
-  <% end %>
-</div>
-<div class="woo-sc-divider flat"></div>
-<p class="highlighter">
-  Don't you think it's time you got the knowledge and advice...
-  <br>
-  to find the relationship that will give you the love you deserve?
-</p>
-<div class="woo-sc-hr"></div>
-<h2 style="color: #818787; text-align: center;">Brought to you by Our Amazing Sponsors</h2>
-
-<% Sponsor.all.each do |sponsor| %>
-  <%= link_to image_tag("http://placehold.it/150x40"), sponsor.url %>
-<% end %>
+<%= render 'speakers' %>
+<%= render 'sponsors' %>

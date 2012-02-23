@@ -1,6 +1,11 @@
 <h1><%= resource.name %></h1>
 <%= resource.bio %>
 
+
 <%= div_for resource.products do |product| %>
-  <%= product.name %> <%= link_to 'Buy', buy_product_path(product) %>
+  <h2><%= product.name %></h2>
+  <%= raw product.description %>
+  <%= link_to buy_product_path(product), :class => "woo-sc-button  custom large" do %>
+    <span class="woo-">Buy Now</span>
+  <% end %>
 <% end %>
