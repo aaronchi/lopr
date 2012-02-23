@@ -58,10 +58,11 @@ end
 group :development, :test do
   #gem 'ruby-debug19', :require => 'ruby-debug'
   gem 'rspec-rails'
-  # Factories
-  gem 'factory_girl_rails'
-  gem 'ffaker'
 end
+
+# Factories
+gem 'factory_girl_rails'
+gem 'ffaker'
 
 group :test do
   
