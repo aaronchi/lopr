@@ -31,7 +31,7 @@ gem 'tabs_on_rails'
 ## Uploads
 gem 'carrierwave'
   gem 'rmagick', :require => 'RMagick'
-  gem 'fog'
+  gem 'fog', '>= 1.1.2'
   
 ## Asset Pipeline
 gem 'jquery-rails'
