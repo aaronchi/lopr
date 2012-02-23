@@ -28,3 +28,22 @@ h1 { font:normal 28px/1.5em "Helvetica Neue", Helvetica, sans-serif;color:#22222
 .business #loopedSlider .content h2.title a { font:bold 24px/1em Arial, sans-serif;color:#ffffff; }
 .business #loopedSlider .content p { font:normal 12px/1.5em Arial, sans-serif;color:#cccccc; }
 .archive_header { font:normal 18px/1em "Helvetica Neue", Helvetica, sans-serif;color:#555555;border-bottom:5px solid #e6e6e6;}
+
+#wlm_counter p.wlm_counter {
+    color: #25a9df;
+}
+
+#slider-background .woo-sc-button, #slider-background .woo-sc-button.yellow, #slider-background .woo-sc-button.green { 
+  border-color: #1068A3;
+  background-color: #007FD4;
+  background: -webkit-gradient(linear,left top,left bottom,color-stop(.3, #007FD4),color-stop(1, #0A4166)) !important;
+  background: -moz-linear-gradient(center top,#007FD4 30%,#0A4166 100%) !important;
+  text-shadow: #0A4166 -1px -1px 0;
+}
+
+#slider-background .woo-sc-button:hover, #slider-background .woo-sc-button.yellow:hover, #slider-background .woo-sc-button.green:hover { 
+  color: #ffffff !important;
+  background: #006FBA;
+  background: -webkit-gradient(linear,left top,left bottom,color-stop(.3, #006FBA),color-stop(1, #06304C)) !important;
+  background: -moz-linear-gradient(center top,#006FBA 30%,#06304C 100%) !important;
+}

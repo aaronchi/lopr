@@ -41,8 +41,8 @@ SimpleForm.setup do |config|
 
     ## Inputs
     b.use :label_input
-    b.use :hint,  :tag => :span, :class => :hint
-    b.use :error, :tag => :span, :class => :error
+    b.use :hint,  :wrap_with => { :tag => :span, :class => :hint }
+    b.use :error, :wrap_with => { :tag => :span, :class => :error }
   end
 
   # The default wrapper to be used by the FormBuilder.
@@ -61,10 +61,10 @@ SimpleForm.setup do |config|
   # config.error_method = :first
 
   # Default tag used for error notification helper.
-  # config.error_notification_tag = :p
+  config.error_notification_tag = :div
 
   # CSS class to add for error notification helper.
-  # config.error_notification_class = :error_notification
+  config.error_notification_class = 'alert alert-error'
 
   # ID to add for error notification helper.
   # config.error_notification_id = nil
@@ -93,10 +93,13 @@ SimpleForm.setup do |config|
   # config.label_text = lambda { |label, required| "#{required} #{label}" }
 
   # You can define the class to use on all labels. Default is nil.
-  # config.label_class = nil
+  config.label_class = 'control-label'
 
   # You can define the class to use on all forms. Default is simple_form.
   # config.form_class = :simple_form
+
+  # You can define which elements should obtain additional classes
+  # config.generate_additional_classes_for = [:wrapper, :label, :input]
 
   # Whether attributes are required by default (or not). Default is true.
   # config.required_by_default = true
@@ -128,6 +131,6 @@ SimpleForm.setup do |config|
   # Automatically discover new inputs in Rails' autoload path.
   # config.inputs_discovery = true
 
-  # Cache simple form inputs discovery
+  # Cache SimpleForm inputs discovery
   # config.cache_discovery = !Rails.env.development?
 end

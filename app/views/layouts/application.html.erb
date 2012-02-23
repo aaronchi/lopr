@@ -6,8 +6,9 @@
     <%= javascript_include_tag "application" %>
     <%= csrf_meta_tags %>
   </head>
-  <body class="one-col width-980 one-col-980">
+  <body class="page one-col width-980 one-col-980">
     <%= render 'header' %>
+    <%= yield :slider %>
     <div id="content-background">
       <div id="wrapper">
         <div id="content" class="col-full business">

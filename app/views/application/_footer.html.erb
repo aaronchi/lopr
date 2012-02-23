@@ -2,44 +2,96 @@
   <div id="wrapper">
     <div id="footer-widgets" class="col-full col-4">
       <div class="block footer-widget-1">
+        <%= image_tag("http://placehold.it/173x80") %>
         <div class="menu-footer-menu-container">
           <ul id="menu-footer-menu" class="menu">
-            <li><a href-"#">Page</a></li>
-            <li><a href-"#">Page</a></li>
-            <li><a href-"#">Page</a></li>
-            <li><a href-"#">Page</a></li>
-            <li><a href-"#">Page</a></li>
-            <li><a href-"#">Page</a></li>
+            <li>
+              <a href="#">Page</a>
+            </li>
+            <li>
+              <a href="#">Page</a>
+            </li>
+            <li>
+              <a href="#">Page</a>
+            </li>
+            <li>
+              <a href="#">Page</a>
+            </li>
+            <li>
+              <a href="#">Page</a>
+            </li>
           </ul>
         </div>
       </div>
       <div class="block footer-widget-2">
-        <div class="widget widget_wlifooterdetail">
-           <p>Col 2</p>
+        <div id="wlpsubscribefooter-3" class="widget widget_wlpsubscribefooter">
+          <h3>Follow Us</h3>
+          <ul id="wlp_subscribe">
+            <li class="sub_twitter">
+              <a href="http://twitter.com/#!/lopr">Follow Us on Twitter</a>
+            </li>
+            <li class="sub_facebook">
+              <a href="http://lopr.com/feed">Join Us on Facebook</a>
+            </li>
+            <li class="sub_rss">
+              <a href="http://lopr.com/feed">Subscribe to RSS Feed</a>
+            </li>
+          </ul>
+        </div>
+        
+      </div>
+      <div class="block footer-widget-3">
+        <div id="wlpsupportdetails-3" class="widget widget_wlpsubscribefooter">
+          <h3>Something Else</h3>
+          <ul class="supportlinks">
+            <li>
+              <a href="#">Links</a>
+            </li>
+            <li>
+              <a href="#">Links</a>
+            </li>
+            <li>
+              <a href="#">Links</a>
+            </li>
+          </ul>
+        </div>
+        <div id="wlmcounter-3" class="widget widget_wlmcounter">
+          <div id="wlm_counter">
+            <p class="wlm_counter">
+              1,225
+            </p>
+            <p>
+              Ppl registered
+            </p>
+          </div>
         </div>
       </div>
       <div class="block footer-widget-4">
-        <div class="widget widget_wlifooterdetail">
-          <p>Col 3</p>
-        </div>
-      </div>
-      <div class="block footer-widget-4">
-        <div class="widget widget_wlifooterdetail">
-           <p>Col 4</p>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div id="footer-copyright">
-    <div id="wrapper">
-      <div id="footer" class="col-full">
-        <div id="copyright" class="col-left">
+        <% Sponsor.limit(2).each do |sponsor| %>
+        <div id="wlifooterdetail-3" class="widget widget_wlifooterdetail">
+          <%= link_to image_tag("http://placehold.it/173x80"), sponsor.url %>
           <p>
-            © <%= Time.now.year %> Love On Purpose Revolution. All Rights Reserved.
+            <%= sponsor.slogan %>
+            <br>
+            <%= link_to "Check Out #{sponsor.name}".upcase, sponsor.url %>
           </p>
         </div>
-        <div id="credit" class="col-right"></div>
+        <% end %>
       </div>
+      <div class="fix"></div>
     </div>
   </div>
+</div>
+<div id="footer-copyright">
+  <div id="wrapper">
+    <div id="footer" class="col-full">
+      <div id="copyright" class="col-left">
+        <p>
+          © <%= Time.now.year %> Love On Purpose Revolution. All Rights Reserved.
+        </p>
+      </div>
+      <div id="credit" class="col-right"></div>
+    </div>
+  </div>
+</div>
 </div>

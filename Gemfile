@@ -18,6 +18,7 @@ gem 'attribute_normalizer'
 gem 'friendly_id'
 gem 'kaminari'
 gem 'sanitize'
+gem 'validate_url'
 
 ## Controllers
 gem 'inherited_resources'
@@ -57,6 +58,9 @@ end
 group :development, :test do
   #gem 'ruby-debug19', :require => 'ruby-debug'
   gem 'rspec-rails'
+  # Factories
+  gem 'factory_girl_rails'
+  gem 'ffaker'
 end
 
 group :test do
@@ -66,14 +70,10 @@ group :test do
   gem 'spork', '~> 1.0rc'
   #gem 'shoulda-context'
   #gem 'shoulda-matchers'
-  
-  # Factories
-  gem 'factory_girl_rails'
-  gem 'ffaker'
 
   # Guard
   gem 'guard-bundler'
-  gem 'guard-livereload', '~> 0.4.0'
+  gem 'guard-livereload'
   gem 'guard-pow'
   gem 'guard-sass'
   gem 'guard-spork'

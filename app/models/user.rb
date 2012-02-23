@@ -6,6 +6,9 @@ class User < ActiveRecord::Base
   ## Security
   attr_accessible :name, :email, :password, :password_confirmation, :remember_me
   
+  ## Validations
+  validates_presence_of :name, :email
+  
   ## Sign up to email list after confirm
   def confirm!
     List.subscribe('lopr2012', self)

@@ -8,4 +8,6 @@ class Sponsor < ActiveRecord::Base
   
   ## Validations
   validates_presence_of :name, :url
+  validates_url :url, :allow_blank => true
+  
 end
