@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Lopr</title>
+    <%= stylesheet_link_tag    "application", :media => "all" %>
+    <%= javascript_include_tag "application" %>
+    <%= csrf_meta_tags %>
+  </head>
+  <body class="one-col width-980 one-col-980">
+    <%= render 'header' %>
+    <div id="content-background">
+      <div id="wrapper">
+        <div id="content" class="col-full business">
+          <div id="main-sidebar-container">
+            <div id="main">
+              <%= yield %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <%= render 'footer' %>
+  </body>
+</html>

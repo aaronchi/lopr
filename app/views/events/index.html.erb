@@ -1,0 +1,5 @@
+<% if @next_event %>
+Next event is <%= @next_event.name %> and starts in <%= distance_of_time_in_words(@next_event.start_time, Time.now) %>
+<% else %>
+No events scheduled
+<% end %>

@@ -1,0 +1,13 @@
+<%= link_to "Add", new_resource_path, :class => 'fr' %>
+<h1><%= resource_class.name.pluralize %></h1>
+<% unless collection.empty? %>
+<table id="featureTable" class="table">
+<% collection.each do |record| %>
+<tr class="rowa">
+  <td class="cell">
+  <%= link_to record.name, edit_resource_path(record) %>
+  </td>
+  </tr>
+<% end %>
+</table>
+<% end %>

@@ -1,0 +1,6 @@
+<h1><%= resource.name %></h1>
+<%= resource.bio %>
+
+<%= div_for resource.products do |product| %>
+  <%= product.name %> <%= link_to 'Buy', buy_product_path(product) %>
+<% end %>

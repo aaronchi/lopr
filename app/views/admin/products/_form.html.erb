@@ -1,0 +1,13 @@
+<%= simple_form_for resource, :url => form_resource_path, :html => {:multipart => true} do |f| %>
+  <%= f.input :name %>
+  <%= f.input :product_id %>
+  <%= f.input :cart_pid %>
+  <%= f.association :speaker %>
+  <%= image_tag(resource.image_url) if resource.image? %>
+  <%= f.input :image, :as => :file %>
+  <%= f.hidden_field :image_cache %>
+  <%= f.input :description %>
+  <div class="buttons">
+  <%= f.submit %>
+  </div>
+<% end %>

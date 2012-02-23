@@ -1,0 +1,11 @@
+<h2>Congratulations</h2>
+
+<%= simple_form_for resource, :as => resource_name, :url => update_user_confirmation_path, :html => {:method => 'put'}, :id => 'activation-form' do |f| %>
+  <%= devise_error_messages! %>
+  <% if @requires_password %>
+    <%= f.input :password %>
+    <%= f.input :password_confirmation %>
+  <% end %>
+  <%= hidden_field_tag :confirmation_token, @confirmation_token %>
+  <%= f.submit "Activate" %>
+<% end %>

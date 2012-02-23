@@ -1,0 +1,10 @@
+<%= simple_form_for resource, :url => form_resource_path do |f| %>
+  <%= f.input :name %>
+  <%= f.association :speaker %>
+  <%= f.input :start_time %>
+  <%= f.input :end_time %>
+  <%= f.input :description %>
+  <div class="buttons">
+  <%= f.submit %>
+  </div>
+<% end %>

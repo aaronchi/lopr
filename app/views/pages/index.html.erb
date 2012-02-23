@@ -1,0 +1,11 @@
+yo!
+
+You should totally sign up!
+
+<%= simple_form_for(User.new, :as => :user, :url => registration_path(:user)) do |f| %>
+  <%= f.input :name %>
+  <%= f.input :email %>
+  <div class="buttons">
+  <%= f.submit "Sign up" %>
+  </div>
+<% end %>
