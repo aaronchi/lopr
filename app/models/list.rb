@@ -1,6 +1,9 @@
 class List
 
-  LISTS = {'lopr2012' => "http://forms.aweber.com/form/81/592908581.htm"}
+  LISTS = {
+    'lopr2012' => "http://forms.aweber.com/form/81/592908581.htm",
+    'loprpurchases12' => 'http://forms.aweber.com/form/47/1406356347.htm'
+  }
   
   # def self.subscribe(name, user)
     # s = client.lists.find_by_name(name).subscribers

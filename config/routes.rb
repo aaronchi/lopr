@@ -21,8 +21,9 @@ Lopr::Application.routes.draw do
   resources :speakers
   resources :products do
     get :buy, :on => :member
+    get :order, :on => :collection
   end
-  post 'products/callback' => "products#callback", :format => 'php'
+  post 'products/callback' => "products#callback"
   get 'welcome' => 'pages#welcome', :as => :welcome
   get 'thanks' => 'pages#thanks', :as => :thanks
   

@@ -57,6 +57,7 @@ class ConfirmationsController < Devise::PasswordsController
 
   def do_confirm
     @confirmable.confirm!
+    @confirmable.remember_me = true
     set_flash_message :notice, :confirmed
     sign_in_and_redirect(resource_name, @confirmable)
   end
