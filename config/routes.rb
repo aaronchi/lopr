@@ -1,7 +1,7 @@
 Lopr::Application.routes.draw do
 
   ## Authentication
-  as :user do
+  devise_scope :user do
     match '/user/confirmation' => 'confirmations#update', :via => :put, :as => :update_user_confirmation
   end
   devise_for :users, :controllers => { 

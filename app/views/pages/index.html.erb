@@ -1,28 +1,16 @@
 <% content_for :slider do %>
-  <%= render 'signup' %>
+  <%= render 'slider' %>
 <% end %>
 
 <h2 class="title" style="text-align: center;">The Most Incredible Teleconference Ever! No, Really!</h2>
-<%= simple_form_for(User.new, :as => :user, :url => registration_path(:user)) do |f| %>
-<%= f.input :name %>
-<%= f.input :email %>
-<div class="buttons">
-  <%= f.submit "Sign up" %>
-</div>
-<% end %> <div class="woo-sc-hr"></div>
-<div id="wlmtestimonials">
-  <div>
-    <span class="testimonialImage">
-      <%= image_tag "http://placehold.it/150x150" %>
-    </span>
-    <p class="testimonialText">
-      <span style="font-size: 36px; vertical-align: -6px;">“</span>All I can say is OMG. I attended this seminar last year and learned so many amazing things - I've been married 3 times since then! There's no chance I would miss this.”
-    </p>
-    <p class="testimonialAuthor">
-      — <strong>Random Lady</strong>, Particpant, Love On Purpose Revolution 2011
-    </p>
-  </div>
+<%= render 'speakers' %>
+<%= render 'bonus' %>
+
+<h2 class="subTitle">Sign Up Today<br></h2>
+<div class="formBox">
+<%= render 'form' %>
 </div>
 <div class="woo-sc-hr"></div>
-<%= render 'speakers' %>
-<%= render 'sponsors' %>
+
+<h2 style="color: #818787; text-align: center;">Brought to you by Our Amazing Sponsors</h2>
+<%= image_tag("http://placehold.it/920x200") %>

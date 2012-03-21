@@ -1,0 +1,5 @@
+<%= simple_form_for(User.new, :as => :user, :url => registration_path(:user)) do |f| %>
+<%= f.input :name %>
+<%= f.input :email %>
+<%= f.submit "Get Started Today", :class => "woo-sc-button custom xl" %>
+<% end %>

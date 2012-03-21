@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-gem 'rails', '3.2.1'
+gem 'rails', '3.2.2'
 gem 'mysql2'
 gem 'settingslogic'
 
@@ -39,7 +39,7 @@ gem 'tinymce-rails'
 
 ## Assets
 group :assets do
-  gem 'compass-rails', '~> 1.0.0.rc.1'
+  gem 'compass-rails'
   gem 'sass-rails',   '~> 3.2.3'
   gem 'coffee-rails', '~> 3.2.1'
   gem 'uglifier', '>= 1.0.3'
@@ -51,6 +51,7 @@ end
 
 group :development do
   gem 'heroku'
+  gem 'mailcatcher'
   gem 'powder'
   gem 'rack-livereload'
 end
@@ -63,6 +64,7 @@ end
 # Factories
 gem 'factory_girl_rails'
 gem 'ffaker'
+gem 'forgery'
 
 group :test do
   

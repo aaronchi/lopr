@@ -70,6 +70,7 @@ ActiveRecord::Schema.define(:version => 20120223175211) do
   create_table "speakers", :force => true do |t|
     t.integer  "user_id"
     t.string   "name"
+    t.text     "short_bio"
     t.text     "bio"
     t.string   "image"
     t.string   "slug"

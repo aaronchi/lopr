@@ -37,4 +37,8 @@ Lopr::Application.configure do
   
   # Don't show extra log data for assets
   config.assets.logger = false
+  
+  ## MailCatcher
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = { :address => "localhost", :port => 1025 }
 end

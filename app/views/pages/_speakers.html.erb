@@ -2,13 +2,13 @@
 <div class="bonusBox">
   <h3>Plus Special Bonus Offers Available Only to Participants</h3>
   <% Speaker.all.each_with_index do |speaker, i| %>
-  <% if i % 5 == 0 && i !=0%> <div class="woo-sc-divider"></div>
+  <% if i % 3 == 0 && i !=0%> <div class="woo-sc-divider"></div>
   <% end %>
-  <div class="fivecol-one<% if i % 5 == 4 %> last<% end %>">
+  <div class="threecol-one<% if i % 3 == 2 %> last<% end %>">
     <div class="bonusItem">
-      <%= link_to_if current_user, image_tag("http://placehold.it/150x90", :class => 'noborder'), speaker %> <h5><%= speaker.name %></h5>
+      <%= link_to_if current_user, image_tag("http://placehold.it/150x225", :class => 'noborder'), speaker %> <h5><%= speaker.name %></h5>
       <p>
-        <%= speaker.bio %>
+        <%= speaker.short_bio %>
       </p>
     </div>
   </div>

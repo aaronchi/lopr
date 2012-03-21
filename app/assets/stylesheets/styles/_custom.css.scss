@@ -47,3 +47,13 @@ h1 { font:normal 28px/1.5em "Helvetica Neue", Helvetica, sans-serif;color:#22222
   background: -webkit-gradient(linear,left top,left bottom,color-stop(.3, #006FBA),color-stop(1, #06304C)) !important;
   background: -moz-linear-gradient(center top,#006FBA 30%,#06304C 100%) !important;
 }
+.entry.text {
+  font-size:14px;
+  p{font-size:14px;}
+}
+
+.clearfix {
+  @include pie-clearfix;
+}
+.content p {margin-bottom:1em;}
+.underline {text-decoration:underline;}

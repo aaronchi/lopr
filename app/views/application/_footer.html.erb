@@ -25,6 +25,7 @@
       </div>
       <div class="block footer-widget-2">
         <div id="wlpsubscribefooter-3" class="widget widget_wlpsubscribefooter">
+          <% if current_user %>
           <h3>Follow Us</h3>
           <ul id="wlp_subscribe">
             <li class="sub_twitter">
@@ -37,6 +38,7 @@
               <a href="http://lopr.com/feed">Subscribe to RSS Feed</a>
             </li>
           </ul>
+          <% end %>
         </div>
         
       </div>
@@ -54,16 +56,6 @@
               <a href="#">Links</a>
             </li>
           </ul>
-        </div>
-        <div id="wlmcounter-3" class="widget widget_wlmcounter">
-          <div id="wlm_counter">
-            <p class="wlm_counter">
-              1,225
-            </p>
-            <p>
-              Ppl registered
-            </p>
-          </div>
         </div>
       </div>
       <div class="block footer-widget-4">
@@ -87,7 +79,7 @@
     <div id="footer" class="col-full">
       <div id="copyright" class="col-left">
         <p>
-          © <%= Time.now.year %> Love On Purpose Revolution. All Rights Reserved.
+          © <%= Time.now.year %> Moving Light Media. All Rights Reserved.
         </p>
       </div>
       <div id="credit" class="col-right"></div>

@@ -3,6 +3,7 @@ class CreateSpeakers < ActiveRecord::Migration
     create_table :speakers do |t|
       t.belongs_to :user
       t.string :name
+      t.text :short_bio
       t.text :bio
       t.string :image
       t.string :slug

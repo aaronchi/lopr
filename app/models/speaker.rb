@@ -6,7 +6,7 @@ class Speaker < ActiveRecord::Base
   mount_uploader :image, ImageUploader
   
   ## Security
-  attr_accessible :name, :bio, :image, :image_cache, :as => :admin
+  attr_accessible :name, :bio, :short_bio, :image, :image_cache, :as => :admin
   
   ## Associations
   has_many :products
