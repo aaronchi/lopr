@@ -1,6 +1,10 @@
 <h1><%= resource.name %></h1>
-<%= resource.bio %>
-
+<div class="clearfix">
+<%= image_tag resource.image_url, :style => 'float:left' %>
+<div style="margin-left:320px;">
+<%= raw resource.bio %>
+</div>
+</div>
 
 <%= div_for resource.products do |product| %>
   <h2><%= product.name %></h2>
