@@ -16,4 +16,8 @@ class ApplicationUploader < CarrierWave::Uploader::Base
     "uploads/#{model.class.to_s.underscore}/#{mounted_as}/#{model.id}"
   end
   
+  def default_url
+    image_path "avatars/#{model.class.to_s.underscore}/#{['image', version_name].compact.join('_')}.gif"
+  end
+  
 end

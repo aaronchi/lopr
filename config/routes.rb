@@ -18,7 +18,7 @@ Lopr::Application.routes.draw do
     root :to => 'application#dashboard'
   end
   
-  resources :events
+  resources :events, :path => 'now', :only => :index
   resources :speakers
   resources :products do
     get :buy, :on => :member
