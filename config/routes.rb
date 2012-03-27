@@ -31,6 +31,7 @@ Lopr::Application.routes.draw do
   authenticated :user do
     root :to => "pages#start"
   end
+  match 'pages/:id' => "pages#show", :as => :page
   root :to => 'pages#index'
   
 end

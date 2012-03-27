@@ -6,7 +6,11 @@
           © <%= Time.now.year %> Moving Light Media. All Rights Reserved.
         </p>
       </div>
-      <div id="credit" class="col-right"></div>
+      <div id="credit" class="col-right">
+        <% Page.active.each do |page| %>
+        <%= link_to page.title, page_path(page) %>
+        <% end %>
+      </div>
     </div>
   </div>
 </div>

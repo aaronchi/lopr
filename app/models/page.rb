@@ -5,7 +5,10 @@ class Page < ActiveRecord::Base
   friendly_id :title, :use => :slugged
   
   ## Security
-  attr_accessible :title, :body, :as => :admin
+  attr_accessible :title, :body, :active, :as => :admin
+  
+  ## Scope
+  scope :active, where(:active => true)
   
   def name
     title

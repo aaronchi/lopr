@@ -2,6 +2,7 @@
 <%= tinymce %>
 <%= simple_form_for resource, :url => form_resource_path do |f| %>
   <%= f.input :title %>
+  <%= f.input :active %>
   <%= f.input :body, :label => false, :input_html => {:class => "tinymce wide"} %>
   <div class="buttons">
   <%= f.submit %>
