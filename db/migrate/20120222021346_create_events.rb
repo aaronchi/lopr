@@ -7,6 +7,8 @@ class CreateEvents < ActiveRecord::Migration
       t.datetime :start_time
       t.datetime :end_time
       t.string :slug
+      t.integer :event_id
+      t.integer :ia_id
       t.timestamps
     end
     add_index :events, :slug, :unique => true

@@ -1,7 +1,7 @@
 class Event < ActiveRecord::Base
   
   ## Security
-  attr_accessible :name, :speaker_id, :start_time, :end_time, :description, :as => :admin
+  attr_accessible :name, :speaker_id, :event_id, :ia_id, :start_time, :end_time, :description, :as => :admin
   
   ## Associations
   belongs_to :speaker

@@ -7,7 +7,7 @@ class CreateSpeakers < ActiveRecord::Migration
       t.text :bio
       t.string :avatar
       t.string :slug
-      t.position :integer
+      t.integer :position
       t.timestamps
     end
     add_index :speakers, :slug, :unique => true
