@@ -1,10 +1,10 @@
 class Sponsor < ActiveRecord::Base
   
   ## Model
-  mount_uploader :image, ImageUploader
+  mount_uploader :image, SponsorUploader
 
   ## Security
-  attr_accessible :name, :url, :slogan, :image, :image_cache, :as => :admin
+  attr_accessible :name, :url, :slogan, :description, :image, :image_cache, :as => :admin
   
   ## Validations
   validates_presence_of :name, :url

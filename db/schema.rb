@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120327221513) do
+ActiveRecord::Schema.define(:version => 20120327222557) do
 
   create_table "assets", :force => true do |t|
     t.integer  "attachable_id"
@@ -97,8 +97,9 @@ ActiveRecord::Schema.define(:version => 20120327221513) do
     t.string   "url"
     t.string   "slogan"
     t.string   "image"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+    t.text     "description"
   end
 
   create_table "users", :force => true do |t|
