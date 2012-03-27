@@ -82,7 +82,7 @@ ActiveRecord::Schema.define(:version => 20120327194618) do
     t.string   "name"
     t.text     "short_bio"
     t.text     "bio"
-    t.string   "avatar"
+    t.string   "image"
     t.string   "slug"
     t.integer  "position"
     t.datetime "created_at", :null => false
