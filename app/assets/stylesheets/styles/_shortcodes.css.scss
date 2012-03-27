@@ -331,7 +331,7 @@ a.woo-sc-button.xl { padding:9px 20px; font-size:1.8em;}
 .simple_form  input.string, .simple_form input.file {width:300px;}
 .simple_form  textarea{
   /*height:300px;*/width:400px;
-  &.tinymce {width:908px;}
+  &.wide {width:910px;}
 }
 .simple_form .error{font-size:12px;display:block;margin-left:120px;color:red;}
 .simple_form .textarea .error{display:block; margin-left:120px}
