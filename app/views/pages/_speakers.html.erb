@@ -6,7 +6,7 @@
   <% end %>
   <div class="threecol-one<% if i % 3 == 2 %> last<% end %>">
     <div class="bonusItem">
-      <%= link_to_if current_user, image_tag("http://placehold.it/150x225", :class => 'noborder'), speaker %> <h5><%= speaker.name %></h5>
+      <%= image_tag(speaker.image_url(:small), :class => 'noborder') %> <h5><%= speaker.name %></h5>
       <p>
         <%= speaker.short_bio %>
       </p>
