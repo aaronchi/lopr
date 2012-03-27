@@ -51,7 +51,8 @@ end
 
 group :development do
   gem 'heroku'
-  gem 'taps'
+    gem 'heroku_san'
+    gem 'taps'
   gem 'mailcatcher'
   gem 'powder'
   gem 'rack-livereload'
