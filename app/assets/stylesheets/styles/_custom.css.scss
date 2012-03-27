@@ -64,3 +64,9 @@ h1 { font:normal 28px/1.5em "Helvetica Neue", Helvetica, sans-serif;color:#22222
 }
 .content p {margin-bottom:1em;}
 .underline {text-decoration:underline;}
+
+
+.collection {
+  border-top:1px solid #ddd;
+  .record {padding:8px 0;border-bottom:1px solid #ddd;}
+}

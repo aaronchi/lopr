@@ -1,13 +1,11 @@
 <%= link_to "Add", new_resource_path, :class => 'fr' %>
 <h1><%= resource_class.name.pluralize %></h1>
 <% unless collection.empty? %>
-<table id="featureTable" class="table">
+<div class="collection" <%= "data-sort=#{request.path}/sort" if collection.first.respond_to?(:position) %>>
 <% collection.each do |record| %>
-<tr class="rowa">
-  <td class="cell">
-  <%= link_to record.name, edit_resource_path(record) %>
-  </td>
-  </tr>
+  <%= div_for record, :class => 'record' do %>
+    <%= link_to record.name, edit_resource_path(record) %>
+  <% end %>
 <% end %>
-</table>
+</div>
 <% end %>

@@ -10,11 +10,17 @@ Lopr::Application.routes.draw do
   }
   
   namespace :admin do
-    resources :speakers
+    resources :speakers do
+      put :sort, :on => :collection
+    end
     resources :events
     resources :products
-    resources :sponsors
-    resources :pages
+    resources :sponsors do
+      put :sort, :on => :collection
+    end
+    resources :pages do
+      put :sort, :on => :collection
+    end
     root :to => 'application#dashboard'
   end
   

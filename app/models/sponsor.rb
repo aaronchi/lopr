@@ -2,6 +2,7 @@ class Sponsor < ActiveRecord::Base
   
   ## Model
   mount_uploader :image, SponsorUploader
+  acts_as_list
 
   ## Security
   attr_accessible :name, :url, :slogan, :description, :image, :image_cache, :as => :admin
@@ -9,5 +10,8 @@ class Sponsor < ActiveRecord::Base
   ## Validations
   validates_presence_of :name, :url
   validates_url :url, :allow_blank => true
+  
+  ## Scopes
+  default_scope :order => 'position'
   
 end
