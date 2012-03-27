@@ -328,7 +328,10 @@ a.woo-sc-button.xl { padding:9px 20px; font-size:1.8em;}
 .simple_form  p {clear:both;float:left;margin-bottom:18px;position:relative;width:100%}
 .simple_form  label{cursor:pointer;display:block;float:left;font-weight:700;padding-right:20px;width:100px;}
 .simple_form  input.string, .simple_form input.file {width:300px;}
-.simple_form  textarea{height:300px;width:400px;}
+.simple_form  textarea{
+  /*height:300px;*/width:400px;
+  &.tinymce {width:908px;}
+}
 .simple_form .error{font-size:12px;display:block;margin-left:120px;color:red;}
 .simple_form .textarea .error{display:block; margin-left:120px}
 .simple_form .screenReader{margin-bottom:0;}

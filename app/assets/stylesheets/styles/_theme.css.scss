@@ -7,7 +7,7 @@ Author URI:     http: //www.leftlanedesigns.com/
 Template:       canvas
 Version:        1.5
 */
-
+#banner {display:block;}
 /*JMO Custom CSS*/
 
 .aff-land-wrap {
@@ -134,7 +134,9 @@ body.one-col #main { width: 920px !important; }
   clear: both !important;
 }
 
+/*
 body { background: #222d2f image-url("bg-topbar.jpg") repeat-x center top !important; }
+*/
 
 #content-background {
   margin-top: 0px !important;
@@ -198,7 +200,10 @@ z-index: -2;
 
 #footer-background { background: #3D4548 image-url("bg-footerbar.jpg") repeat-x center top; }
 
-#footer-copyright { background: #222d2f image-url("bg-bottombar.jpg") repeat-x center top; padding-top: 4px;
+#footer-copyright { 
+  /*
+  background: #222d2f image-url("bg-bottombar.jpg") repeat-x center top; padding-top: 4px;
+  */
 }
 
 #footer-widgets {
@@ -289,20 +294,22 @@ box-shadow: 1px 2px 6px rgba(0, 0, 0, 0.4);
 
 /* @group TOP NAVIGATION BAR */
 
-#topnav {
+#topnav.site {
   text-align: right;
-  height: 51px;
+  position:absolute;
+  right:20px;
+  top:185px;
 }
 
 #topnav a {
-  color: #8C969B;
-  font-weight: normal;
+  color: #444;
+  font-weight: bold;
   font-size: 13px;
   line-height: 40px;
 }
 
 #topnav a:hover {
-  color: #c5cdd0;
+  color: #000;
 }
 
 #topnav .nav .sf-sub-indicator {
@@ -1178,8 +1185,9 @@ p.t_locator {
 }
 
 #footer, #footer a, #footer-widgets, #footer-widgets a, #footer-background, #footer-background a, #footer-widgets .widget, #footer-widgets .textwidget {
-  color: #AAB2B5 !important;
-  text-shadow: #222d2f -1px -1px 0;
+  /*color: #AAB2B5 !important;
+  text-shadow: #222d2f -1px -1px 0;*/
+  color: #222d2f !important;
 }
 
 #footer a:hover, #footer-widgets a:hover, #footer-background a:hover {

@@ -5,8 +5,9 @@ class CreateSpeakers < ActiveRecord::Migration
       t.string :name
       t.text :short_bio
       t.text :bio
-      t.string :image
+      t.string :avatar
       t.string :slug
+      t.position :integer
       t.timestamps
     end
     add_index :speakers, :slug, :unique => true

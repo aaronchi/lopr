@@ -1,3 +1,3 @@
-class Admin::PagesController < Admin::ApplicationController
+class Admin::PagesController < Admin::ResourcesController
   
 end

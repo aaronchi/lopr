@@ -1,5 +1,6 @@
 <div id="wrapper">
-  <div id="topnav" class="col-full">
+  <%= image_tag 'header.jpg', :width => "980", :id => 'banner' %>
+  <div id="topnav" class="col-full site">
     <ul class="nav fr">
       <% if current_user %>
       <li>
@@ -17,15 +18,5 @@
       </li>
       <% end %>
     </ul>
-    <ul class="nav">
-      <div class="menu-top-menu-container">
-        <ul id="menu-top-menu" class="menu">
-          <li>
-            <a href="/">Home</a>
-          </li>
-        </ul>
-      </div>
-    </ul>
   </div>
-  <div class="col-full"></div>
 </div>

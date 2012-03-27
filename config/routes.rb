@@ -14,7 +14,8 @@ Lopr::Application.routes.draw do
     resources :events
     resources :products
     resources :sponsors
-    root :to => 'pages#index'
+    resources :pages
+    root :to => 'application#dashboard'
   end
   
   resources :events

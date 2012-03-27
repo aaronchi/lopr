@@ -1,0 +1,9 @@
+<%= tinymce_assets %>
+<%= tinymce %>
+<%= simple_form_for resource, :url => form_resource_path do |f| %>
+  <%= f.input :title %>
+  <%= f.input :body, :label => false, :input_html => {:class => "tinymce"} %>
+  <div class="buttons">
+  <%= f.submit %>
+  </div>
+<% end %>

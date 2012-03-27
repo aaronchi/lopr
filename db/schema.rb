@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120223175211) do
+ActiveRecord::Schema.define(:version => 20120327194618) do
 
   create_table "assets", :force => true do |t|
     t.integer  "attachable_id"
@@ -52,6 +52,14 @@ ActiveRecord::Schema.define(:version => 20120223175211) do
   add_index "orders", ["order_id"], :name => "index_orders_on_order_id"
   add_index "orders", ["product_id"], :name => "index_orders_on_product_id"
 
+  create_table "pages", :force => true do |t|
+    t.string   "title"
+    t.string   "slug"
+    t.text     "body"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
   create_table "products", :force => true do |t|
     t.integer  "speaker_id"
     t.string   "name"
@@ -72,7 +80,7 @@ ActiveRecord::Schema.define(:version => 20120223175211) do
     t.string   "name"
     t.text     "short_bio"
     t.text     "bio"
-    t.string   "image"
+    t.string   "avatar"
     t.string   "slug"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
