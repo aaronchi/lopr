@@ -1,11 +1,17 @@
 <% if @next_event %>
-Next event is <%= @next_event.name %> and starts in <%= distance_of_time_in_words(@next_event.start_time, Time.now) %>
-<% else %>
-No events scheduled
-<% end %>
+<h2>Next Event: <%= @next_event.name %> - <%= distance_of_time_in_words(@next_event.start_time, Time.now) %></h2>
 
-<iframe width="650px" height="530px" frameborder="0" scrolling="no" src="http://www.attendthisevent.com/Modern/Webcast/Replay.asp?eventID=27150069&IAID=9258201"></iframe><!--
-<iframe width="650px" height="530px" frameborder="0" scrolling="no" src="http://attendthisevent.com/SlidesPro.asp?eventid=21661572"></iframe>
-<iframe width="283px" height="288px" frameborder="0" scrolling="no" src="http://attendthisevent.com/Modern/questionFrame.asp?eventid=21661572&EmailQA=0"></iframe>
-<iframe width="650px" height="530px" frameborder="0" scrolling="no" src="http://www.attendthisevent.com/Modern/Webcast/Replay.asp?eventID=21661572&IAID=9258201"></iframe>
--->
+<div class="clearfix">
+<div style="float:left;">
+<%= embed_event @next_event %>
+</div>
+<div style="float:right;margin-right:-20px;">
+<%= embed_questions @next_event %>
+</div>
+</div>
+
+<% else %>
+<h2>No events scheduled</h2>
+<% end %>
+  
+<%= render 'pages/sponsors' %>

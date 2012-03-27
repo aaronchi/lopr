@@ -5,8 +5,8 @@
   <%= f.association :speaker, :collection => Speaker.unscoped.order(:name) %>
   <%= f.input :start_time %>
   <%= f.input :end_time %>
-  <%= f.input :event_id, :label => 'TS eventID' %>
   <%= f.input :ia_id, :label => 'TS IAID' %>
+  <%= f.input :event_id, :label => 'TS eventID' %>
   <%= f.input :description, :input_html => {:class => "tinymce"} %>
   <div class="buttons">
   <%= f.submit %>
