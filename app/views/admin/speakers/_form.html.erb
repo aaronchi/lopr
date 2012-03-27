@@ -1,8 +1,8 @@
 <%= simple_form_for resource, :url => form_resource_path, :html => {:multipart => true} do |f| %>
   <%= f.input :name %>
   <%= image_tag(resource.avatar_url(:small)) if resource.avatar? %>
-  <%= f.input :avatar, :as => :file %>
-  <%= f.hidden_field :avatar_cache %>
+  <%= f.input :image, :as => :file %>
+  <%= f.hidden_field :image_cache %>
   <%= f.input :short_bio, :input_html => {:rows => 3} %>
   <%= f.input :bio %>
   <div class="buttons">

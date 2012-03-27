@@ -38,7 +38,7 @@ packages here
   <% Speaker.all.each_with_index do |speaker, i| %>
     <div class="bonusItem clearfix">
       <div style="float:left">
-      <%= image_tag(speaker.avatar_url(:small), :class => 'noborder') %>
+      <%= image_tag(speaker.image_url(:small), :class => 'noborder') %>
       </div>
       <div style="margin-left:255px">
       <h4><%= speaker.name %></h4>

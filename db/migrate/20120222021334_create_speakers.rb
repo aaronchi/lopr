@@ -5,7 +5,7 @@ class CreateSpeakers < ActiveRecord::Migration
       t.string :name
       t.text :short_bio
       t.text :bio
-      t.string :avatar
+      t.string :image
       t.string :slug
       t.integer :position
       t.timestamps
