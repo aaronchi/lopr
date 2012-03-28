@@ -15,6 +15,9 @@ Lopr::Application.routes.draw do
     end
     resources :events
     resources :products
+    resources :bonuses do
+      put :sort, :on => :collection
+    end
     resources :sponsors do
       put :sort, :on => :collection
     end

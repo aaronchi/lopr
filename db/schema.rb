@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120327225954) do
+ActiveRecord::Schema.define(:version => 20120328025629) do
 
   create_table "assets", :force => true do |t|
     t.integer  "attachable_id"
@@ -24,6 +24,15 @@ ActiveRecord::Schema.define(:version => 20120327225954) do
     t.integer  "file_size"
     t.datetime "created_at",                    :null => false
     t.datetime "updated_at",                    :null => false
+  end
+
+  create_table "bonuses", :force => true do |t|
+    t.string   "name"
+    t.text     "short_description"
+    t.string   "image"
+    t.integer  "position"
+    t.datetime "created_at",        :null => false
+    t.datetime "updated_at",        :null => false
   end
 
   create_table "events", :force => true do |t|
