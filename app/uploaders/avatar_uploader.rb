@@ -2,7 +2,7 @@ class AvatarUploader < ApplicationUploader
   
   process :resize_to_fill => [300,300]
   version :small do
-    process :resize_to_fill => [225,150]
+    process :resize_to_fill => [150,225]
   end
 
   # Add a white list of extensions which are allowed to be uploaded.

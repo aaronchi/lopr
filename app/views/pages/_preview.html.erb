@@ -16,7 +16,7 @@
                 <%= image_tag "http://placehold.it/600x320" %>
               </div>
               <div class="twocol-one last">
-                <%= countdown(Event.next.first, true) %>
+                <%= countdown(Event.next.first, true) if Event.next.first %>
                 <a href="<%= events_path %>" class="woo-sc-button  custom xl" style="background:blue;border-color:blue"><span class="woo-">Go To Webcast</span></a>
               </div>
             </div>
