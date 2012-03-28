@@ -70,3 +70,20 @@ h1 { font:normal 28px/1.5em "Helvetica Neue", Helvetica, sans-serif;color:#22222
   border-top:1px solid #ddd;
   .record {padding:8px 0;border-bottom:1px solid #ddd;}
 }
+
+.cntSeparator {
+  font-size: 32px;
+  margin: 10px 2px;
+  color: #000;
+}
+.desc { margin: 7px 3px; }
+.desc div {
+  float: left;
+  font-family: Arial;
+  width: 55px;
+  margin-right:20px;
+  font-size: 11px;
+  font-weight: bold;
+  color: #000;
+  text-align:right;
+}

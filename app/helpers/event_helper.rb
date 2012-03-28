@@ -8,4 +8,26 @@ module EventHelper
     %(<iframe width="283px" height="288px" frameborder="0" scrolling="no" src="http://attendthisevent.com/Modern/questionFrame.asp?eventid=#{event.id}&EmailQA=0"></iframe>).html_safe
   end
   
+  def countdown(event, direct = false)
+    %(
+    <script>
+    $(function(){
+      $('#counter').countdown({
+        startTime: '#{event.timecode}'
+      });
+    });
+    </script>
+    #{'<div class="desc">
+    Next Event In:
+    </div>' if direct }
+    <div id="counter"></div>
+    <div class="desc">
+      <div>Days</div>
+      <div>Hours</div>
+      <div>Minutes</div>
+      <div>Seconds</div>
+    </div>
+    ).html_safe
+  end
+  
 end

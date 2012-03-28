@@ -1,6 +1,11 @@
 <% if @next_event %>
-<h2>Next Event: <%= @next_event.name %> - <%= distance_of_time_in_words(@next_event.start_time, Time.now) %></h2>
 
+<div class="clearfix" style="margin-bottom:10px;">
+<div style="float:right;margin-right:-40px;margin-top:-10px;">
+  <%= countdown(@next_event) %>
+</div>
+<h2>Next Event: <%= @next_event.name %></h2>
+</div>
 <div class="clearfix">
 <div style="float:left;">
 <%= embed_event @next_event %>
