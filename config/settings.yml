@@ -24,6 +24,6 @@ test:
 production:
   <<: *defaults
   domain: loveonpurposerevolution.com
-  mail_domain: lopr.herokuapp.com
+  mail_domain: www.loveonpurposerevolution.com
   assets:
     storage: fog
