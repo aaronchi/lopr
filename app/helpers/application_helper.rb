@@ -9,4 +9,8 @@ module ApplicationHelper
     bonus.download ? bonus_path(bonus) : bonus.url
   end
   
+  def embed_video(id)
+    %(<iframe width="560" height="315" src="http://www.youtube.com/embed/#{id}?rel=0&autoplay=1" frameborder="0" allowfullscreen></iframe>).html_safe
+  end
+  
 end
