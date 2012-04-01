@@ -1,6 +1,6 @@
 <div id="header">
     <%= image_tag 'header.jpg', :width => "990", :id => 'banner' %>
-    <ul id="nav">
+    <ul class="nav pos">
         <% if current_user %>
         <li>
             <%= link_to current_user.name, edit_user_registration_path %>

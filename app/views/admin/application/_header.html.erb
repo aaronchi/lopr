@@ -1,23 +1,16 @@
 <%= javascript_include_tag "admin" %>
-<div id="wrapper">
-  <div id="topnav" class="col-full">
-    <ul class="nav fr">
-      <li>
-        <%= link_to "Back to Site", root_path %>
-      </li>
-    </ul>
-    <ul class="nav">
-      <div class="menu-top-menu-container">
-        <ul id="menu-top-menu" class="menu">
-          <li><%= link_to "Speakers", admin_speakers_path %></li>
-          <li><%= link_to "Events", admin_events_path %></li>
-          <li><%= link_to "Products", admin_products_path %></li>
-          <li><%= link_to "Bonuses", admin_bonuses_path %></li>
-          <li><%= link_to "Sponsors", admin_sponsors_path %></li>
-          <li><%= link_to "Pages", admin_pages_path %></li>
-        </ul>
-      </div>
-    </ul>
-  </div>
-  <div class="col-full"></div>
+<div id="header" class="admin">
+  <ul class="nav right">
+    <li>
+      <%= link_to "Back to Site", root_path %>
+    </li>
+  </ul>
+  <ul class="nav">
+    <li><%= link_to "Speakers", admin_speakers_path %></li>
+    <li><%= link_to "Events", admin_events_path %></li>
+    <li><%= link_to "Products", admin_products_path %></li>
+    <li><%= link_to "Bonuses", admin_bonuses_path %></li>
+    <li><%= link_to "Sponsors", admin_sponsors_path %></li>
+    <li><%= link_to "Pages", admin_pages_path %></li>
+  </ul>
 </div>
