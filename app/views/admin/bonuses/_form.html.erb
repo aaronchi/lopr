@@ -2,13 +2,20 @@
 <%= tinymce %>
 <%= simple_form_for resource, :url => form_resource_path, :html => {:multipart => true} do |f| %>
   <%= f.input :name %>
-  <%= image_tag(resource.image_url(:small)) if resource.image? %>
+  <%= content_tag :div, image_tag(resource.image_url(:small)), :class => 'input indent' if resource.image? %>
   <%= f.input :image, :as => :file %>
   <%= f.hidden_field :image_cache %>
+  <% if f.object.download %>
+  <div class="input">
+    <small class="indent"><%= f.object.download.asset.file.filename %></small>
+  </div>
+  <% else %>
   <%= f.input :url %>
   <%= f.fields_for :download, f.object.download ? f.object.download : f.object.build_download do |df| %>
     <%= df.input :remote_asset_url %>
   <% end %>
+  <% end %>
+  
   <%= f.input :short_description, :input_html => {:class => "tinymce"} %>
   <div class="buttons">
   <%= f.submit %>

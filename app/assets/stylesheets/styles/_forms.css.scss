@@ -1,7 +1,10 @@
+.indent {margin-left:120px;}
+
 .simple_form {
   
   div.input {
     clear:both;
+    margin-bottom: 10px;
     &.boolean {margin-left:120px;}
     
     label{cursor:pointer;display:block;float:left;font-weight:700;padding-right:20px;width:100px;
@@ -15,7 +18,7 @@
       border-color: #CCC #EFEFEF #EFEFEF #CCC;
       border-width: 1px;
       border-style: solid;
-      margin-bottom: 10px;
+      
     }
     textarea{
       width:400px;
