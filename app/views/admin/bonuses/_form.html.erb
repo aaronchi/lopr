@@ -12,7 +12,7 @@
   <% else %>
   <%= f.input :url %>
   <%= f.fields_for :download, f.object.download ? f.object.download : f.object.build_download do |df| %>
-    <%= df.input :remote_asset_url %>
+    <%= df.input :remote_asset_url, :label => "File Upload" %>
   <% end %>
   <% end %>
   
