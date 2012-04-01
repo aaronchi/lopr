@@ -9,8 +9,10 @@
   <body>
     
     <div id="wrapper">
-      <div id="flash"><%= alert %><%= notice %></div>
       <%= render 'header' %>
+      <% if alert || notice %>
+      <div id="flash"><%= alert %><%= notice %></div>
+      <% end %>
       <%= yield %>
       <%= render 'footer' %>    
     </div>
