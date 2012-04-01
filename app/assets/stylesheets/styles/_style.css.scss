@@ -1,3 +1,4 @@
+$red: #ED1C24;
 $orange: #F15A29;
 $light-orange: #f5c08e;
 body {
@@ -15,7 +16,7 @@ a {text-decoration:none;color:$orange;
   margin:0 auto;
 }
 #header {
-  &.admin {padding:10px 0;border-bottom:2px solid #dcdcde;;margin-bottom:10px;}
+  &.admin {padding:10px 0;border-bottom:2px solid #dcdcde;margin-bottom:10px;}
   position:relative;
   @include pie-clearfix;
   #banner {display:block;}
@@ -82,6 +83,13 @@ img.o {margin-left:10px;margin-top:-5px;}
   }
 }
 
+.product-box {
+  @include pie-clearfix;
+  width:800px;margin:10px auto;
+  .title {display:inline-block;background:#fef200;font-size:22px;padding:10px 40px;}
+  .entry {font-size:14px;padding:16px 40px;background:#fcf8d3;}
+}
+
 .video {border: 5px solid #dcdcde;display:inline-block;
   iframe {display:block;}
 }
@@ -108,8 +116,11 @@ h2 {margin:0;padding:0;font-size:32px;color: $orange;}
 h3 {margin:0;padding:0;font-size:30px;color: $orange;}
 h4 {margin:0;padding:0;font-size:20px;color: $orange;}
 h5 {margin:0;padding:0;font-size:18px;color: $orange;}
+.red {color:$red;}
+.black {color:#444;}
 .center {text-align:center;}
 .big {font-size:20px;}
+.small {font-size:12px;}
 .tiny {font-size:9px;}
 strong {font-weight:bold;}
 .clear {clear:both;}

@@ -2,6 +2,8 @@
 <%= tinymce %>
 <%= simple_form_for resource, :url => form_resource_path, :html => {:multipart => true} do |f| %>
   <%= f.input :name %>
+  <%= f.input :title %>
+  <%= f.input :price %>
   <%= f.input :product_id, :label => 'AW ProductID' %>
   <%= f.input :cart_pid, :label => 'AW Cart PID' %>
   <%= f.association :speaker, :collection => Speaker.unscoped.order(:name) %>
@@ -9,6 +11,7 @@
   <%= f.input :image, :as => :file %>
   <%= f.hidden_field :image_cache %>
   <%= f.input :description, :input_html => {:class => "tinymce"} %>
+  
   <div class="buttons">
   <%= f.submit %>
   </div>

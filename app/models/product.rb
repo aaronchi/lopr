@@ -6,7 +6,7 @@ class Product < ActiveRecord::Base
   mount_uploader :image, ImageUploader
   
   ## Security
-  attr_accessible :name, :product_id, :cart_pid, :speaker_id, :description, :image, :image_cache, :as => :admin
+  attr_accessible :name, :title, :price, :product_id, :cart_pid, :speaker_id, :description, :image, :image_cache, :as => :admin
   
   ## Associations
   belongs_to :speaker
@@ -14,6 +14,9 @@ class Product < ActiveRecord::Base
   
   ## Validations
   validates_presence_of :name, :product_id, :cart_pid
+  
+  ## Scope
+  scope :global, where(:speaker_id => nil)
   
   ## Methods
   def purchase_url

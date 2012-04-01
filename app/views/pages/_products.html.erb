@@ -1,1 +1,16 @@
-prods
+<div class="box">
+<% Product.global.each do |product| %>
+<div class="product-box">
+  <div class="title"><%= product.title %></div>
+  <div class="entry content">
+    <h5 class="black"><strong><%= product.name %></strong></h5>
+    <%= raw product.description %>
+    <h5 class="red"><strong>Just <%= number_to_currency product.price, :precision => 0 %>!</strong></h5>
+    <center>
+      <%= link_to image_tag('add-to-cart.png', :width => 280), buy_product_path(product) %>
+      <div class="small"><strong>Outside the US? International orders easiest via PayPal.</strong></div>
+    </center>
+  </div>
+</div>
+<% end %>
+</div>
