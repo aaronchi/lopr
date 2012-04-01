@@ -1,26 +1,26 @@
-<h2 class="subTitle">FREE Instant Access to Powerful Relationship Tools!</h2>
-<p>In addition to the live summit sessions, when you register for The Love On Purpose Revolution you’ll have immediate access to a wealth of relationship tools downloadable directly to your computer.
-Here are the valuable bonuses you’ll receive just for signing up Before April 16th!</p>
-<div class="bonusBox">
+<div class="row">
   <% Bonus.all.each_with_index do |bonus, i| %>
-  <% if i == 0 %>
-  <center>
-    <h3><%= bonus.name %></h3>
-    <%= image_tag(bonus.image_url) %>
-    <div class="bonusItem">
-      <p><%= bonus.short_description %></p>
+    <% if i== 0 %>
+    <div class="col bonus main">
+      <%= image_tag bonus.image_url %>
+      <div class="entry content">
+        <h4><%= bonus.name %></h4>
+        <%= raw bonus.short_description %>
+      </div>
     </div>
-  </center>
-  <% else %>
-  <% if i % 3 == 1 %> <div class="woo-sc-divider"></div><% end %>
-  <div class="threecol-one<% if i % 3 == 1 %> last<% end %>">
-    <div class="bonusItem">
-      <center><%= image_tag(bonus.image_url(:medium), :class => 'noborder') %></center>
-      <h5><%= bonus.name %></h5>
-      <p><%= bonus.short_description %></p>
+    <% else %>
+    <% if i % 3 == 1 %>
+<div class="clear"></div>
+<% end %>
+    <div class="col span4 bonus">
+      <%= image_tag bonus.image_url(:medium) %>
+      
+      <div class="entry content">
+        <h4><%= bonus.name %></h4>
+        <%= raw bonus.short_description %>
+      </div>
     </div>
-  </div>
+    <% end %>
   <% end %>
-  <% end %>
-</div>
-<div class="woo-sc-hr"></div>
+<div>
+<div class="clear"></div>

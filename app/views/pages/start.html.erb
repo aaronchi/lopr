@@ -1,59 +1,90 @@
+<%= render 'intro' %>
+
 <% content_for :slider do %>
   <%= render 'preview' %>
 <% end %>
 
-<h2 class="title" style="text-align: center;">Congratulations!</h2>
-<div class="entry">
-<p class="large">
-Welcome to the Love On Purpose Revolution where you can access everything you need to Make This Your Summer of Love!
-</p><p>
-Make sure to be with us LIVE every night Monday through Friday at 5pm Pacific/8pm Eastern starting July 11th through August 8th.
-We’ll be joined by a top expert on Dating, Conscious Relationships, Love, Sex, Intimacy, and Self Love each evening. 
-</p><p>
-You can listen on your phone or on the web.  Go to: <%= link_to "www.loveonpurposerevolution.com/now", events_path %>
-to see the featured Expert each evening and also to access the recordings for FREE for 24 hours after the call. 
-</p>
-</div>
-<div class="woo-sc-hr"></div>
-
-
-<p class="highlighter">
-  IMPORTANT: This page contains special prices on the lifetime access packages the Love On Purpose Revolution sessions. Be sure to read this entire page so you don’t miss this special pricing! 
-</p>
-
-<br>
-
-<div class="entry text">
-<%= raw Page.first.body %>
-</div>
-<div class="woo-sc-hr"></div>
-<h2>There are two lifetime access packages available for you.</h2>
-<div class="entry text">
-<p>Choose the one that makes the most sense.</p>
-</div>
-packages here
-<div class="woo-sc-hr"></div>
-<h2 class="subTitle">You have lifetime access to these powerful speakers:</h2>
-<div class="bonusBox">
-  <% Speaker.all.each_with_index do |speaker, i| %>
-    <div class="bonusItem clearfix">
-      <div style="float:left">
-      <%= image_tag(speaker.image_url(:small), :class => 'noborder') %>
-      </div>
-      <div style="margin-left:180px">
-      <h4><%= speaker.name %></h4>
-      <div class="content"><%= raw speaker.bio %></div>
+<div class="row">
+    
+    <div class="col">
+      <div class="video">
+      <iframe width="560" height="315" src="http://www.youtube.com/embed/q0O2HlRlT00" frameborder="0" allowfullscreen></iframe>
       </div>
     </div>
-    <div class="woo-sc-divider"></div>
-  <% end %>
-</div>
-<div class="woo-sc-hr"></div>
-<h2>Our 30 Day Unconditional 100% Money Back Guarantee</h2>
-<div class="entry text">
-<p>We realize it might be hard to make this decision since you have not heard any of the sessions yet. So what we’ve done to take all the risk out of your decision is include an unconditional guarantee with your purchase. You’ll have a full 30-days from purchase to make up your mind.  If you're not 100% satisfied, we don't expect, or even desire, to keep your money. Simply notify us within 30 Days and we’ll give you your money back, no questions asked. We'll even let you keep all the bonuses for FREE!</p>
+    
+  <div class="col block span4">
+  
+  </div>
+  </div>
+  
+<div class="box grey center">
+  <h2><strong>Congratulations!</strong></h2>
+  <h2>Welcome to the Love On Purpose Revolution where you can<br>access everything you need to Spring Into Love!</h2>
 </div>
 
-packages here again
+<div class="box center">
+  <h2 class="grey">CLICK HERE to receive your bonuses!</h2>
+</div>
+
+<%= render 'bonus' %>
+
+
+<div class="box center">
+  <h1>Begins on Monday, April 16th!</h1>
+  <br>
+  <p class="big">
+Make sure to be with us LIVE every night <strong>Monday through Friday at 5pm Pacific/8pm Eastern</strong> starting April 16th. A top expert on Love, Dating, Sex and Relationships will share their uniquetools, tips and techniques to show you how to create love on purpose.
+ <br><br>
+You can listen via the web from your computer or your telephone. <br>
+Go to: <%= link_to 'www.loveonpurposerevolution.com/now', events_path %> <br>
+for details on how to access each session.</p>
+</div>
+
+<div class="box yellow center">
+  IMPORTANT: This page contains special prices on the lifetime access packages the Love On Purpose Revolution sessions. Be sure to read this entire page so you don’t miss this special pricing! 
+</div>
+
+<div class="welcome">
+  <%= image_tag 'couples.jpg' %>
+  <div class="content">
+  <%= raw Page.first.body %>
+  </div>
+</div>
+
+
+<div class="box center">
+ <h3>There are three lifetime access packages available for you.<br>
+Choose the one that makes the most sense.</h3>
+  </div>
+  
+  <%= render 'products' %>
+
+<div class="box center grey">
+  <h3>You have lifetime access to these powerful speakers</h3>
+</div>
+  
+<div class="row">
+  <% Speaker.all.each_with_index do |speaker, i| %>
+    <div class="col speaker2">
+      
+      <%= image_tag(speaker.image_url) %>
+      
+      <div class="entry">
+      
+      <div class="content"><h3><%= speaker.name %></h3><%= raw speaker.bio %></div>
+      </div>
+    </div>
+    <div class="clear"></div>
+  <% end %>
+</div>
+
+<div class="box center">
+<h1>Our 30 Day Unconditional<br>100% Money Back Guarantee</h1>
+</div>
+<div class="big">
+<p>We realize it might be hard to make this decision since you have not heard any of the sessions yet. So what we’ve done to take all the risk out of your decision is include an unconditional guarantee with your purchase. You’ll have a full 30-days from purchase to make up your mind.  If you're not 100% satisfied, we don't expect, or even desire, to keep your money. Simply notify us within 30 Days and we’ll give you your money back, no questions asked. We'll even let you keep all the bonuses for FREE!</p>
+</div>
+
+<%= render 'products' %>
 
 <%= render 'sponsors' %>

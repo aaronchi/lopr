@@ -51,8 +51,15 @@ a {text-decoration:none;
   p {font-size:13px;margin-bottom:20px;}
 }
 
+.speaker2 {
+  img {display:block;float:left;}
+  .entry {margin-left:320px;padding:10px 20px;background:#f3f3f3;
+  }
+}
+
 .bonus {
   &.main {
+    height:280px;
     margin-bottom:40px;
     img {float:left;border:0;padding:0;}
     h4 {font-size:27px;}
@@ -69,6 +76,7 @@ img.o {margin-left:10px;margin-top:-5px;}
   margin:10px 0;
   &.grey {background: #f3f3f3;}
   &.orange {background: $light-orange;}
+  &.yellow {@include border-radius(10px);background:#fcf8d3;width:730px;font-size:20px;padding:10px 40px;margin:0 auto;font-style:italic;}
   &.blockquote {width:730px;margin:10px auto;}
   .quote {padding:10px;font-size:13px;
   p {margin-bottom:10px;}
@@ -84,11 +92,23 @@ img.o {margin-left:10px;margin-top:-5px;}
   .record {padding:8px 0;border-bottom:1px solid #ddd;}
 }
 
+.welcome {
+  font-size:13px;
+  padding:30px 0;
+  @include pie-clearfix;
+  width:950px;margin:0 auto;
+  img {float:left;}
+  .content {margin-left:340px;}
+}
 
-span.orange {color:$orange;}
+
+span.orange, p.orange {color:$orange;}
+h2.grey {color:#444;}
 h1 {margin:0;padding:0;font-size:40px;color: $orange;}
 h2 {margin:0;padding:0;font-size:32px;color: $orange;}
+h3 {margin:0;padding:0;font-size:30px;color: $orange;}
 h4 {margin:0;padding:0;font-size:20px;color: $orange;}
+h5 {margin:0;padding:0;font-size:18px;color: $orange;}
 .center {text-align:center;}
 .big {font-size:20px;}
 .tiny {font-size:9px;}
@@ -96,3 +116,12 @@ strong {font-weight:bold;}
 .clear {clear:both;}
 .right {float:right;}
 .left {float:left;}
+
+
+.content {
+  h5 {line-height:1.4;margin-bottom:1em;}
+  ul  { margin: 0 0 15px 0; padding: 0 0 0 30px;
+   li  { list-style-type: disc; }
+  }
+  p {margin-bottom:1em;}
+}

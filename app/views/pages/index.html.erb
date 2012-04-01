@@ -1,7 +1,4 @@
-<div class="box grey center">
-  <h2>25 Experts on Love, Dating, Sex and Relationships BUST the Myth</h2>
-  <p>that Love Is Supposed to Happen By Accident... the Love On Purpose Revolution!</p>
-</div>
+<%= render 'intro' %>
 
 
   <div class="row">
@@ -103,32 +100,8 @@ Every one of these sessions will be filled with profound insights and powerful t
   </p>
 </div>
 
-<div class="row">
-  <% Bonus.all.each_with_index do |bonus, i| %>
-    <% if i== 0 %>
-    <div class="col bonus main">
-      <%= image_tag bonus.image_url %>
-      <div class="entry">
-        <h4><%= bonus.name %></h4>
-        <%= bonus.short_description %>
-      </div>
-    </div>
-    <% else %>
-    <% if i % 3 == 1 %>
-<div class="clear"></div>
-<% end %>
-    <div class="col span4 bonus">
-      <%= image_tag bonus.image_url(:medium) %>
-      
-      <div class="entry">
-        <h4><%= bonus.name %></h4>
-        <%= bonus.short_description %>
-      </div>
-    </div>
-    <% end %>
-  <% end %>
-<div>
-<div class="clear"></div>
+<%= render 'bonus' %>
+
 <div style="width:325px;margin:0 auto;">
 <h1 class="center">Sign Up Today</h1>
 <div class="block">
