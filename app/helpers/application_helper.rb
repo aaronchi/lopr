@@ -5,4 +5,8 @@ module ApplicationHelper
     resource.persisted? ? resource_path(resource) : collection_path
   end
   
+  def download_bonus_path(bonus)
+    bonus.download ? bonus.download.asset_url : bonus.url
+  end
+  
 end

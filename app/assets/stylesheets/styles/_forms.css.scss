@@ -1,6 +1,9 @@
 .simple_form {
   
   div.input {
+    clear:both;
+    &.boolean {margin-left:120px;}
+    
     label{cursor:pointer;display:block;float:left;font-weight:700;padding-right:20px;width:100px;
       abbr {display:none;}
     }

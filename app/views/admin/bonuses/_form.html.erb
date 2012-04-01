@@ -5,6 +5,10 @@
   <%= image_tag(resource.image_url(:small)) if resource.image? %>
   <%= f.input :image, :as => :file %>
   <%= f.hidden_field :image_cache %>
+  <%= f.input :url %>
+  <%= f.fields_for :download, f.object.download ? f.object.download : f.object.build_download do |df| %>
+    <%= df.input :remote_asset_url %>
+  <% end %>
   <%= f.input :short_description, :input_html => {:class => "tinymce"} %>
   <div class="buttons">
   <%= f.submit %>

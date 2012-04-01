@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120401033444) do
+ActiveRecord::Schema.define(:version => 20120401073206) do
 
   create_table "assets", :force => true do |t|
     t.integer  "attachable_id"
@@ -31,6 +31,17 @@ ActiveRecord::Schema.define(:version => 20120401033444) do
     t.text     "short_description"
     t.string   "image"
     t.integer  "position"
+    t.datetime "created_at",        :null => false
+    t.datetime "updated_at",        :null => false
+    t.string   "url"
+  end
+
+  create_table "downloads", :force => true do |t|
+    t.integer  "downloadable_id"
+    t.string   "downloadable_type"
+    t.string   "asset"
+    t.string   "content_type"
+    t.integer  "file_size"
     t.datetime "created_at",        :null => false
     t.datetime "updated_at",        :null => false
   end
@@ -81,10 +92,11 @@ ActiveRecord::Schema.define(:version => 20120401033444) do
     t.text     "description"
     t.string   "image"
     t.string   "slug"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
     t.string   "title"
     t.float    "price"
+    t.string   "redirect_url"
   end
 
   add_index "products", ["product_id"], :name => "index_products_on_product_id"

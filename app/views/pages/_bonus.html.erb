@@ -2,7 +2,7 @@
   <% Bonus.all.each_with_index do |bonus, i| %>
     <% if i== 0 %>
     <div class="col bonus main">
-      <%= image_tag bonus.image_url %>
+      <%= link_to_if current_user, image_tag(bonus.image_url), download_bonus_path(bonus), :target => '_blank' %>
       <div class="entry content">
         <h4><%= bonus.name %></h4>
         <%= raw bonus.short_description %>
@@ -13,7 +13,7 @@
 <div class="clear"></div>
 <% end %>
     <div class="col span4 bonus">
-      <%= image_tag bonus.image_url(:medium) %>
+      <%= link_to_if current_user, image_tag(bonus.image_url(:medium)), download_bonus_path(bonus), :target => '_blank' %>
       
       <div class="entry content">
         <h4><%= bonus.name %></h4>
