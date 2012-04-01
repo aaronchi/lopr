@@ -7,7 +7,7 @@ body {
   color: #444;
   line-height:1.4;
 }
-a {text-decoration:none;
+a {text-decoration:none;color:$orange;
   &:hover {text-decoration:underline;}
 }
 #wrapper {
@@ -15,7 +15,7 @@ a {text-decoration:none;
   margin:0 auto;
 }
 #header {
-  &.admin {padding:10px 0;border-bottom:5px solid #dcdcde;;margin-bottom:10px;}
+  &.admin {padding:10px 0;border-bottom:2px solid #dcdcde;;margin-bottom:10px;}
   position:relative;
   @include pie-clearfix;
   #banner {display:block;}
@@ -31,11 +31,11 @@ a {text-decoration:none;
 }
 
 #footer {
-  
+  border-top:2px solid #dcdcde;margin-top:40px;
   padding: 20px 0;
   @include pie-clearfix;
   .right {
-    a {margin-left:12px;color:#444;}
+    a {margin-left:12px;}
   }
 }
 
@@ -59,7 +59,7 @@ a {text-decoration:none;
 
 .bonus {
   &.main {
-    height:280px;
+    height:288px;
     margin-bottom:40px;
     img {float:left;border:0;padding:0;}
     h4 {font-size:27px;}
@@ -76,14 +76,14 @@ img.o {margin-left:10px;margin-top:-5px;}
   margin:10px 0;
   &.grey {background: #f3f3f3;}
   &.orange {background: $light-orange;}
-  &.yellow {@include border-radius(10px);background:#fcf8d3;width:730px;font-size:20px;padding:10px 40px;margin:0 auto;font-style:italic;}
+  &.yellow {@include border-radius(10px);background:#fcf8d3;width:750px;font-size:20px;padding:10px 50px;margin:0 auto;font-style:italic;}
   &.blockquote {width:730px;margin:10px auto;}
   .quote {padding:10px;font-size:13px;
   p {margin-bottom:10px;}
   }
 }
 
-.video {border: 5px solid #dcdcde;
+.video {border: 5px solid #dcdcde;display:inline-block;
   iframe {display:block;}
 }
 
