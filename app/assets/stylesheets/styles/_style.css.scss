@@ -42,7 +42,7 @@ a {text-decoration:none;color:$orange;
 .row {margin-left:-44px;@include pie-clearfix;
   .col {float:left;margin:10px 0 10px 44px;}
   .span4 {width:300px;}
-  .span3 {width:220px;}
+  .span3 {width:210px;}
   h4 {margin:10px 0;line-height:1.2;}
   
 }
@@ -59,11 +59,10 @@ a {text-decoration:none;color:$orange;
 
 .bonus {
   &.main {
-    height:288px;
     margin-bottom:40px;
     img {float:left;border:0;padding:0;}
     h4 {font-size:27px;}
-    .entry {margin-left:320px;background:#d8df20;padding:2px 10px 10px 10px;font-size:17px;color:#58595B;}
+    .entry {margin-left:320px;background:#d8df20;padding:2px 20px 10px 20px;font-size:17px;color:#58595B;height:288px;}
   }
   img {border:1px solid #d8df20;padding:5px;}
   .entry {padding:6px;margin-right:24px;font-size:13px;}
@@ -124,4 +123,24 @@ strong {font-weight:bold;}
    li  { list-style-type: disc; }
   }
   p {margin-bottom:1em;}
+}
+
+.clearfix {@include pie-clearfix;}
+
+
+.cntSeparator {
+  font-size: 32px;
+  margin: 10px 2px;
+  color: #000;
+}
+.desc { margin: 7px 3px; }
+.desc div {
+  float: left;
+  font-family: Arial;
+  width: 55px;
+  margin-right:20px;
+  font-size: 11px;
+  font-weight: bold;
+  color: #000;
+  text-align:right;
 }

@@ -12,8 +12,8 @@
       </div>
     </div>
     
-  <div class="col block span4">
-  
+  <div class="col">
+    <%= countdown(Event.next.first, true) if Event.next.first %>
   </div>
   </div>
   

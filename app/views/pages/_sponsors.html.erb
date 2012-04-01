@@ -1,10 +1,10 @@
 <div class="box center">
     <h2>We'd Like to Thank Our Sponsors</h2>
-    <div class="row">
-        <% Sponsor.all.each_with_index do |sponsor, i| %>
-        <div class="col span3 center">
-           <%= link_to_if current_user, image_tag(sponsor.image_url), sponsor.url, :target => "_blank" %>
-        </div>
-        <% end %>
-    </div>
+</div>
+<div class="row">
+  <% Sponsor.all.each_with_index do |sponsor, i| %>
+  <div class="col span3 center">
+      <%= link_to_if current_user, image_tag(sponsor.image_url), sponsor.url, :target => "_blank" %>
+  </div>
+  <% end %>
 </div>
