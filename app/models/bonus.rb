@@ -9,7 +9,7 @@ class Bonus < ActiveRecord::Base
   
   ## Associations
   has_one :download, :as => :downloadable
-    accepts_nested_attributes_for :download
+    accepts_nested_attributes_for :download, :reject_if => proc { |a| a["remote_asset_url"].blank? }
   
   ## Scope
   default_scope :order => 'position'

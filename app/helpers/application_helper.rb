@@ -6,7 +6,7 @@ module ApplicationHelper
   end
   
   def download_bonus_path(bonus)
-    bonus.download ? bonus : bonus.url
+    bonus.url.blank? ? bonus : bonus.url
   end
   
 end
