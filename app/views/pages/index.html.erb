@@ -1,15 +1,139 @@
-<% content_for :slider do %>
-  <%= render 'slider' %>
+<div class="box grey center">
+  <h2>25 Experts on Love, Dating, Sex and Relationships BUST the Myth</h2>
+  <p>that Love Is Supposed to Happen By Accident... the Love On Purpose Revolution!</p>
+</div>
+
+
+  <div class="row">
+    
+    <div class="col">
+      <div class="video">
+      <iframe width="560" height="315" src="http://www.youtube.com/embed/q0O2HlRlT00" frameborder="0" allowfullscreen></iframe>
+      </div>
+    </div>
+    
+  <div class="col block span4">
+  <%= render 'form' %>
+  </div>
+  </div>
+
+
+<div class="box grey center">
+  <h2>Join these 25 top Love, Dating, Sex, and Relationship Experts<br>for FREE as they bring you the Love On<br>Purpose Revolution!</h2>
+</div>
+
+<div class="row">
+<% Speaker.all.each_with_index do |speaker, i| %>
+<% if i % 3 == 0 %>
+<div class="clear"></div>
 <% end %>
+<% if i == 24 %>
+<div class="spaker col span4"></div>
+<% end %>
+<div class="spaker col span4">
+  <%= image_tag speaker.image_url %>
+  <h4><%= speaker.name %></h4>
+  <p><%= speaker.short_bio %></p>
+</div>
+<% end %>
+</div>
 
-<h2 class="title" style="text-align: center;">The Most Incredible Teleconference Ever! No, Really!</h2>
-<%= render 'speakers' %>
-<%= render 'bonus' %>
+<div class="box center">
+  <h1>Here's what previous participants of the<br>Love On Purpose Revolution<br>had to say about their experience:</h1>
+</div>
 
-<h2 class="subTitle">Sign Up Today<br></h2>
-<div class="formBox">
+<div class="box orange blockquote">
+<div class="quote"><p>
+These calls are fantastic!  I am completely blown away by the quality of your Experts and all the tips and tools that theyare  giving. Thank you!!!!
+</p><p>
+– Diane
+</p></div>
+<%= image_tag "o.png", :class => 'o' %>
+<div class="quote"><p>
+I have listened to almost every call in this re-evolution of love and have taken enormous value from each session.Perhaps one of the greatest values is my own humility.  I had been skeptical about such 'marketing' style seminars
+and 'what could I, who yearns for depth benefit from 1 hour of marketing?
+</p><p>
+Thank you for showing me how arrogant I was. I have benefited more than I am already aware. With loving blessings...
+</p><p>
+— Devorah
+</p></div>
+<%= image_tag "o.png", :class => 'o' %>
+<div class="quote"><p>
+I have not missed even one call!  Love the presenters you have picked as well as your leading of the calls.  Your candidsharing and dynamics are insightful.  This is not flattery, but my honest feedback.  Thank you!
+</p><p>
+— Carmela
+</p></div>
+<%= image_tag "o.png", :class => 'o' %>
+<div class="quote"><p>
+I am enjoying the series more than words can say!  Every session is truly remarkable; I cannot recall a time when I havehad this many Ah-ha moments with one event.  Thank you!
+</p><p>
+— Laura
+</p></div>
+<%= image_tag "o.png", :class => 'o' %>
+<div class="quote"><p>
+I'm enjoying this series so much.  Every night I feel like you are all speaking just to me addressing my issues and givingme the steps I need to take to overcome them.  Thank you.
+</p><p>
+— Kimberly
+</p></div>
+<%= image_tag "o.png", :class => 'o' %>
+<div class="quote"><p>
+Please know how much I felt, appreciated and benefitted from your love and generosity. I'll be ordering the MP3's of all
+the talks, another act of generosity from you and your faculty.  Although I'll miss being with you each week, I'll remember
+you both as I keep learning about love.
+</p><p>
+— Mary Jane
+</p></div>
+</div>
+
+
+<div class="box center">
+  <h1>Begins on Monday, April 16th!</h1>
+  <br>
+  <p class="big">
+There will be live LOVE calls every day Monday through Friday at 5:00pm Pacific Time.
+And you’ll have <strong>FREE access to every one of these powerful live sessions.</strong>
+Every one of these sessions will be filled with profound insights and powerful tools to help YOU create LOVE ON PURPOSE in your life! So you definitely do NOT want to miss any of these sessions!
+  </p>
+</div>
+
+<div class="box center">
+  <h1>FREE Instant Access to Powerful Relationship Tools!</h1>
+  <p class="big">
+    In addition to the live summit sessions, when you register for The Love On Purpose Revolution you’ll have <strong>immediate access to a wealth of relationship <span class="orange">tools downloadable directly to your computer.</span></strong> Here are the valuable bonuses you’ll receive just for signing up Before April 16th!
+  </p>
+</div>
+
+<div class="row">
+  <% Bonus.all.each_with_index do |bonus, i| %>
+    <% if i== 0 %>
+    <div class="col bonus main">
+      <%= image_tag bonus.image_url %>
+      <div class="entry">
+        <h4><%= bonus.name %></h4>
+        <%= bonus.short_description %>
+      </div>
+    </div>
+    <% else %>
+    <% if i % 3 == 1 %>
+<div class="clear"></div>
+<% end %>
+    <div class="col span4 bonus">
+      <%= image_tag bonus.image_url(:medium) %>
+      
+      <div class="entry">
+        <h4><%= bonus.name %></h4>
+        <%= bonus.short_description %>
+      </div>
+    </div>
+    <% end %>
+  <% end %>
+<div>
+<div class="clear"></div>
+<div style="width:325px;margin:0 auto;">
+<h1 class="center">Sign Up Today</h1>
+<div class="block">
 <%= render 'form' %>
 </div>
-<div class="woo-sc-hr"></div>
+</div>
 
 <%= render 'sponsors' %>

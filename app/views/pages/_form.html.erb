@@ -1,5 +1,9 @@
 <%= simple_form_for(User.new, :as => :user, :url => registration_path(:user)) do |f| %>
-<%= f.input :name %>
-<%= f.input :email %>
-<%= f.submit "Get Started Today", :class => "woo-sc-button custom xl" %>
+<center><%= image_tag 'arrows.jpg' %></center>
+<%= f.input :name, :label => 'Enter Your Name' %>
+<%= f.input :email, :label => 'Enter Your Email' %>
+<center>
+<%= image_submit_tag "button-get-access.png" %>
+<p class="tiny">We respect your privacy.  We will never rent, sell or trade your information to any other organization.</p>
+</center>
 <% end %>

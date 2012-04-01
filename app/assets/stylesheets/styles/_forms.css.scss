@@ -1,0 +1,29 @@
+.simple_form {
+  
+  div.input {
+    label{cursor:pointer;display:block;float:left;font-weight:700;padding-right:20px;width:100px;
+      abbr {display:none;}
+    }
+   
+    input.string, input.file {width:300px;}
+    
+    input, textarea {
+      padding: 5px;
+      border-color: #CCC #EFEFEF #EFEFEF #CCC;
+      border-width: 1px;
+      border-style: solid;
+      margin-bottom: 10px;
+    }
+    textarea{
+      width:400px;
+      &.wide {width:910px;}
+    }
+  }
+}
+
+.block {
+  div.input {
+    label {float:none;margin-bottom:4px;font-weight:normal;width:auto;}
+  }
+  p.tiny {width:240px;margin-top:10px;}
+}

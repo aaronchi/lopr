@@ -1,0 +1,86 @@
+$orange: #F15A29;
+$light-orange: #f5c08e;
+body {
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  font-weight: 300;
+  font-size:14px;
+  color: #444;
+  line-height:1.4;
+}
+a {text-decoration:none;
+  &:hover {text-decoration:underline;}
+}
+#wrapper {
+  width:990px;
+  margin:0 auto;
+}
+#header {
+  position:relative;
+  #banner {display:block;}
+  #nav {position:absolute;bottom:20px;right:40px;text-align:right;
+  li {display:block;float:left;
+    a {display:block;float:left;margin-left:10px;padding-left:10px;font-weight:bold;color:#fff;text-decoration:none;}
+  }
+  }
+}
+
+#footer {
+  
+  padding: 20px 0;
+  @include pie-clearfix;
+  .right {
+    a {margin-left:12px;color:#444;}
+  }
+}
+
+.row {margin-left:-44px;@include pie-clearfix;
+  .col {float:left;margin:10px 0 10px 44px;}
+  .span4 {width:300px;}
+  .span3 {width:220px;}
+  h4 {margin:10px 0;line-height:1.2;}
+  
+}
+.speaker {
+  img {width:300px;height:300px;display:block;}
+  p {font-size:13px;margin-bottom:20px;}
+}
+
+.bonus {
+  &.main {
+    margin-bottom:40px;
+    img {float:left;border:0;padding:0;}
+    h4 {font-size:27px;}
+    .entry {margin-left:320px;background:#d8df20;padding:2px 10px 10px 10px;font-size:17px;color:#58595B;}
+  }
+  img {border:1px solid #d8df20;padding:5px;}
+  .entry {padding:6px;margin-right:24px;font-size:13px;}
+}
+
+img.o {margin-left:10px;margin-top:-5px;}
+
+.box {
+  padding:10px;
+  margin:10px 0;
+  &.grey {background: #f3f3f3;}
+  &.orange {background: $light-orange;}
+  &.blockquote {width:730px;margin:10px auto;}
+  .quote {padding:10px;font-size:13px;
+  p {margin-bottom:10px;}
+  }
+}
+
+.video {border: 5px solid #dcdcde;
+  iframe {display:block;}
+}
+
+span.orange {color:$orange;}
+h1 {margin:0;padding:0;font-size:40px;color: $orange;}
+h2 {margin:0;padding:0;font-size:32px;color: $orange;}
+h4 {margin:0;padding:0;font-size:20px;color: $orange;}
+.center {text-align:center;}
+.big {font-size:20px;}
+.tiny {font-size:9px;}
+strong {font-weight:bold;}
+.clear {clear:both;}
+.right {float:right;}
+.left {float:left;}

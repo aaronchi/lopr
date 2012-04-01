@@ -1,16 +1,10 @@
-<div id="footer-copyright">
-  <div id="wrapper">
-    <div id="footer" class="col-full">
-      <div id="copyright" class="col-left">
-        <p>
-          © <%= Time.now.year %> Moving Light Media. All Rights Reserved.
-        </p>
-      </div>
-      <div id="credit" class="col-right">
+<div id="footer">
+    <div class="left">
+        © <%= Time.now.year %> Moving Light Media. All Rights Reserved.
+    </div>
+    <div class="right">
         <% Page.active.each do |page| %>
         <%= link_to page.title, page_path(page) %>
         <% end %>
-      </div>
     </div>
-  </div>
 </div>

@@ -1,22 +1,20 @@
-<div id="wrapper">
-  <%= image_tag 'header.jpg', :width => "980", :id => 'banner' %>
-  <div id="topnav" class="col-full site">
-    <ul class="nav fr">
-      <% if current_user %>
-      <li>
-        <%= link_to current_user.name, edit_user_registration_path %>
-      </li>
-      <li>
-        <%= link_to 'Logout', destroy_user_session_path, :method => :delete %>
-      </li>
-      <% else %>
-      <li>
-        <%= link_to 'Log In', new_user_session_path %>
-      </li>
-      <li>
-        <%= link_to 'Sign Up', new_user_registration_path %>
-      </li>
-      <% end %>
+<div id="header">
+    <%= image_tag 'header.jpg', :width => "990", :id => 'banner' %>
+    <ul id="nav">
+        <% if current_user %>
+        <li>
+            <%= link_to current_user.name, edit_user_registration_path %>
+        </li>
+        <li>
+            <%= link_to 'Logout', destroy_user_session_path, :method => :delete %>
+        </li>
+        <% else %>
+        <li>
+            <%= link_to 'Log In', new_user_session_path %>
+        </li>
+        <li>
+            <%= link_to 'Sign Up', new_user_registration_path %>
+        </li>
+        <% end %>
     </ul>
-  </div>
 </div>
