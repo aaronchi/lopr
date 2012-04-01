@@ -3,9 +3,9 @@
 <div class="product-box">
   <div class="title"><%= product.title %></div>
   <div class="entry content">
-    <h5 class="black"><strong><%= product.name %></strong></h5>
+    <p class="big"><strong><%= product.name %></strong></p>
     <%= raw product.description %>
-    <h5 class="red"><strong>Just <%= number_to_currency product.price, :precision => 0 %>!</strong></h5>
+    <p class="red big"><strong>Just <%= number_to_currency product.price, :precision => 0 %>!</strong></p>
     <center>
       <%= link_to image_tag('add-to-cart.png', :width => 280), buy_product_path(product) %>
       <div class="small"><strong>Outside the US? International orders easiest via PayPal.</strong></div>

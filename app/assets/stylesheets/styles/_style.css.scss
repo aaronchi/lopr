@@ -84,10 +84,14 @@ img.o {margin-left:10px;margin-top:-5px;}
 }
 
 .product-box {
-  @include pie-clearfix;
-  width:800px;margin:10px auto;
+  width:800px;margin:0px auto;padding:10px 0;
   .title {display:inline-block;background:#fef200;font-size:22px;padding:10px 40px;}
   .entry {font-size:14px;padding:16px 40px;background:#fcf8d3;}
+}
+
+.special {
+  width:900px;margin:0 auto;padding:20px 0;
+  img {width:150px;height:150px;float:left;margin-right:30px;border:1px solid #bbb;}
 }
 
 .video {border: 5px solid #dcdcde;display:inline-block;
