@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120401073206) do
+ActiveRecord::Schema.define(:version => 20120402140327) do
 
   create_table "assets", :force => true do |t|
     t.integer  "attachable_id"
@@ -130,7 +130,7 @@ ActiveRecord::Schema.define(:version => 20120401073206) do
   create_table "users", :force => true do |t|
     t.string   "name"
     t.string   "email",                                 :null => false
-    t.string   "encrypted_password",                    :null => false
+    t.string   "encrypted_password"
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"

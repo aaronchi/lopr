@@ -9,6 +9,10 @@ class User < ActiveRecord::Base
   ## Validations
   validates_presence_of :name, :email
   
+  def first_name
+    name.split(' ').first
+  end
+  
   ## Sign up to email list after confirm
   def confirm!
     List.subscribe('lopr2012', self)
