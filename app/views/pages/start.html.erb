@@ -1,9 +1,5 @@
 <%= render 'intro' %>
 
-<% content_for :slider do %>
-  <%= render 'preview' %>
-<% end %>
-
 <div class="row">
     
     <div class="col">
@@ -14,6 +10,8 @@
     
   <div class="col">
     <%= countdown(Event.next.first, true) if Event.next.first %>
+    <br>
+    <%= link_to "Go to WebCast", events_path, :class => 'button' %>
   </div>
   </div>
   

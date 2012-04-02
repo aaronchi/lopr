@@ -1,9 +1,10 @@
 <% if @next_event %>
-<div class="box">
-    <div class="right" style="margin-right:-30px;margin-top:-10px;">
+<div class="box clearfix">
+  
+    <div class="right" style="margin-right:-30px;">
       <%= countdown(@next_event) %>
     </div>
-    <h2>Next Event: <%= @next_event.name %></h2>
+    <h2>Next LIVE Session in:</h2> 
 </div>
 <div class="clearfix">
     <div style="float:left;">
