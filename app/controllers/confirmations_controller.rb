@@ -39,10 +39,16 @@ class ConfirmationsController < Devise::PasswordsController
     end
   end
   
+  
+  
   protected
+  
+  def resource
+    @confirmable ||= User.find_or_initialize_with_error_by(:confirmation_token, params[:confirmation_token])
+  end
 
   def with_unconfirmed_confirmable
-    @confirmable = User.find_or_initialize_with_error_by(:confirmation_token, params[:confirmation_token])
+    resource
     if !@confirmable.new_record?
       @confirmable.only_if_unconfirmed {yield}
     end
