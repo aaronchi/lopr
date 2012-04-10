@@ -7,7 +7,7 @@ class User < ActiveRecord::Base
   attr_accessible :name, :email, :password, :password_confirmation, :remember_me
   
   ## Validations
-  validates_presence_of :name, :email
+  validates_presence_of :name
   
   def first_name
     name.split(' ').first
@@ -15,7 +15,7 @@ class User < ActiveRecord::Base
   
   ## Sign up to email list after confirm
   def confirm!
-    List.subscribe('lopr2012', self)
+    List.subscribe('lopr2012', self) rescue nil
     super
   end
   ## Enable password after confirmation
