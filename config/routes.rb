@@ -28,8 +28,8 @@ Lopr::Application.routes.draw do
   end
   
   resources :events, :path => 'now', :only => :index
-  resources :speakers
-  resources :products do
+  resources :speakers, :path => '', :only => :show
+  resources :products, :only => :show do 
     get :buy, :on => :member
     get :order, :on => :collection
   end

@@ -1,3 +1,15 @@
+<% if current_user %>
+<div class="box center">
+  <h2 class="grey">CLICK to receive your bonuses!</h2>
+</div>
+<% else %>
+<div class="box center">
+  <h1>FREE Instant Access to Powerful Relationship Tools!</h1>
+  <p class="big">
+    In addition to the live summit sessions, when you register for The Love On Purpose Revolution you’ll have <strong>immediate access to a wealth of relationship <span class="orange">tools downloadable directly to your computer.</span></strong> Here are the valuable bonuses you’ll receive just for signing up Before April 16th!
+  </p>
+</div>
+<% end %>
 <div class="row">
   <% Bonus.all.each_with_index do |bonus, i| %>
     <% if i== 0 %>

@@ -1,7 +1,5 @@
 <%= render 'intro' %>
-
 <div class="row">
-    
     <div class="col">
       <div class="video">
         <%= embed_video 'rfJyXsw9bx0' %>
@@ -13,19 +11,14 @@
     <br>
     <%= link_to "Go to WebCast", events_path, :class => 'button' %>
   </div>
-  </div>
+</div>
   
 <div class="box grey center">
   <h2><strong>Congratulations!</strong></h2>
   <h2>Welcome to the Love On Purpose Revolution where you can<br>access everything you need to Spring Into Love!</h2>
 </div>
 
-<div class="box center">
-  <h2 class="grey">CLICK to receive your bonuses!</h2>
-</div>
-
-<%= render 'bonus' %>
-
+<%= render 'bonus' if Time.now < Time.parse('2012/04/16 00:00:00').in_time_zone("Pacific Time (US & Canada)") %>
 
 <div class="box center">
   <h1>Begins on Monday, April 16th!</h1>
@@ -58,6 +51,7 @@ Choose the one that makes the most sense.</h3>
   <%= render 'products' %>
   
   <% sponsor = Sponsor.find(31) %>
+  <a name="soulkuoffer"></a>
   <div class="special big content">
     <%= link_to image_tag(sponsor.image_url), sponsor.url, :target => '_blank' %>
     <h2>SPECIAL OFFER</h2>

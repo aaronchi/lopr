@@ -18,4 +18,9 @@ class Speaker < ActiveRecord::Base
   ## Scopes
   default_scope :order => 'position'
   
+  ## Methods
+  def normalize_friendly_id(value)
+    value.parameterize.underscore.camelize.downcase
+  end
+  
 end
