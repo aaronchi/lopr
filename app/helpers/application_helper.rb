@@ -10,7 +10,8 @@ module ApplicationHelper
   end
   
   def embed_video(id)
-    %(<iframe width="560" height="315" src="http://www.youtube.com/embed/#{id}?rel=0&autoplay=1" frameborder="0" allowfullscreen></iframe>).html_safe
+    autoplay = current_user && current_user.sign_in_count > 1 ? 0 : 1
+    %(<iframe width="560" height="315" src="http://www.youtube.com/embed/#{id}?rel=0&autoplay=#{autoplay}" frameborder="0" allowfullscreen></iframe>).html_safe
   end
   
 end
