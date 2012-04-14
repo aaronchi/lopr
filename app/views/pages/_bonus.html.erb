@@ -1,3 +1,5 @@
+<% if params[:controller] == 'pages' %>
+<% rows = 3;span = 4 %>
 <% if current_user %>
 <div class="box center">
   <h2 class="grey">CLICK to receive your bonuses!</h2>
@@ -10,29 +12,30 @@
   </p>
 </div>
 <% end %>
+<% else %>
+<% rows = 4;span = 3 %>
+<% end %>
 <div class="row">
   <% Bonus.all.each_with_index do |bonus, i| %>
-    <% if i== 0 %>
-    <div class="col bonus main">
-      <%= link_to_if current_user, image_tag(bonus.image_url), download_bonus_path(bonus), :target => '_blank' %>
-      <div class="entry content">
-        <h4><%= link_to_if current_user, bonus.name, download_bonus_path(bonus), :target => '_blank' %></h4>
-        <%= raw bonus.short_description %>
-      </div>
+  <% if i== 0 %>
+  <div class="col bonus main">
+    <%= link_to_if current_user, image_tag(bonus.image_url), download_bonus_path(bonus), :target => '_blank' %>
+    <div class="entry content">
+      <h4><%= link_to_if current_user, bonus.name, download_bonus_path(bonus), :target => '_blank' %></h4>
+      <%= raw bonus.short_description %>
     </div>
-    <% else %>
-    <% if i % 3 == 1 %>
-<div class="clear"></div>
-<% end %>
-    <div class="col span4 bonus">
-      <%= link_to_if current_user, image_tag(bonus.image_url(:medium)), download_bonus_path(bonus), :target => '_blank' %>
-      
-      <div class="entry content">
-        <h4><%= link_to_if current_user, bonus.name, download_bonus_path(bonus), :target => '_blank' %></h4>
-        <%= raw bonus.short_description %>
-      </div>
+  </div>
+  <% else %>
+  <% if i % rows == 1 %><div class="clear"></div><% end %>
+  <% if rows == 4 && i == 5 %><div class="col span<%= span %> bonus"></div><% end %>
+  <div class="col span<%= span %> bonus">
+    <%= link_to_if current_user, image_tag(bonus.image_url(:medium)), download_bonus_path(bonus), :target => '_blank' %>
+    <div class="entry content">
+      <h4><%= link_to_if current_user, bonus.name, download_bonus_path(bonus), :target => '_blank' %></h4>
+      <%= raw bonus.short_description %>
     </div>
-    <% end %>
+  </div>
   <% end %>
-<div>
+  <% end %>
+</div>
 <div class="clear"></div>

@@ -12,6 +12,18 @@ class Event < ActiveRecord::Base
   ## Scopes
   default_scope :order => 'start_time'
   
+  def over?
+    Time.now.utc > end_time
+  end
+  
+  def has_audio?
+    false
+  end
+  
+  def has_transcript?
+    false
+  end
+  
   def timecode
     t = start_time - Time.now
     mm, ss = t.divmod(60)

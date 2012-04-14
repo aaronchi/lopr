@@ -1,3 +1,23 @@
-<h1><%= resource.name %></h1>
+<h2 class="uppercase"><%= resource.name %></h2>
+<div class="content">
+<%= raw @product.description %>  
+</div>
 
-<%= link_to "Buy Me", buy_product_path(resource) %>
+<% if @product.speaker %>
+
+<% else %>
+<%= render 'pages/bonus' if @product.id == 21 %>
+<div class="row">
+  <% Event.includes(:speaker).all.each_with_index do |event, i| %>
+  <% if i % 5 == 0 %><div class="clear"></div><% end %>
+  <div class="download col">
+    <%= image_tag event.speaker.image_url, :class => 'image' %>
+    <h4><%= event.speaker.name %></h4>
+    <%= link_to_if event.has_audio?, image_tag('buttons/download.jpg', :class => event.has_audio? ? nil : 'disabled'), '#' %>
+    <%= link_to_if event.has_transcript?, image_tag('buttons/transcripts.jpg', :class => event.has_transcript? ? nil : 'disabled'), '#' unless @product.id == 1 %>
+    <%= link_to_if event.over?, image_tag('buttons/special-offer.jpg', :class => event.over? ? nil : 'disabled'), speaker_url(event.speaker) %>
+  </div>
+  <% end %>
+</div>
+<% end %>
+<%= render 'pages/sponsors' %>

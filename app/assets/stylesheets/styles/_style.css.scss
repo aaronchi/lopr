@@ -17,6 +17,7 @@ a {text-decoration:none;color:$orange;
 }
 #flash {padding:9px 20px;background:#fcf8d3;}
 #header {
+  margin-bottom:10px;
   &.admin {padding:10px 0;border-bottom:2px solid #dcdcde;margin-bottom:10px;}
   position:relative;
   @include pie-clearfix;
@@ -59,15 +60,40 @@ a {text-decoration:none;color:$orange;
   }
 }
 
+.download {
+  img {display:block;}
+  img.image {width:156px;height:156px;}
+  h4 {font-size:15px;text-align:center;background:#D1D3D4;padding:10px 0;margin:5px 0;color:#222;}
+}
+
+img.disabled {
+  @include opacity(0.25);
+}
 .bonus {
   &.main {
     margin-bottom:40px;
     img {float:left;border:0;padding:0;}
-    h4 {font-size:27px;}
+    h4 {font-size:20px;}
     .entry {margin-left:320px;background:#d8df20;padding:2px 20px 10px 20px;font-size:17px;color:#58595B;height:288px;}
   }
+  h4 {font-size:14px;}
   img {border:1px solid #d8df20;padding:5px;}
   .entry {padding:6px;margin-right:24px;font-size:13px;}
+}
+
+.products-layout {
+  .bonus {
+    &.main {
+      margin-bottom:40px;
+      img {float:left;border:0;padding:0;width:175px;height:175px;}
+      h4 {font-size:24px;}
+      .entry {margin-left:195px;background:#d8df20;padding:2px 20px 10px 20px;font-size:14px;color:#58595B;height:163px;}
+      p {display:block;}
+    }
+    img {border:1px solid #d8df20;padding:5px;width:150px;height:150px;}
+    .entry {padding:0;margin-right:24px;font-size:13px;}
+    p {display:none;}
+  }
 }
 
 img.o {margin-left:10px;margin-top:-5px;}
@@ -131,7 +157,7 @@ strong {font-weight:bold;}
 .clear {clear:both;}
 .right {float:right;}
 .left {float:left;}
-
+.uppercase {text-transform:uppercase;}
 
 .content {
   h5 {line-height:1.4;margin-bottom:1em;}

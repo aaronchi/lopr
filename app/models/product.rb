@@ -6,7 +6,7 @@ class Product < ActiveRecord::Base
   mount_uploader :image, ImageUploader
   
   ## Security
-  attr_accessible :name, :title, :price, :product_id, :cart_pid, :speaker_id, :description, :image, :image_cache, :redirect_url, :as => :admin
+  attr_accessible :name, :title, :price, :product_id, :cart_pid, :speaker_id, :short_description, :description, :image, :image_cache, :redirect_url, :as => :admin
   
   ## Associations
   belongs_to :speaker

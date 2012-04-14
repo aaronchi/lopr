@@ -5,7 +5,7 @@
   <div class="title"><%= product.title %></div>
   <div class="entry content">
     <p class="big"><strong><%= product.name %></strong></p>
-    <%= raw product.description %>
+    <%= raw product.short_description %>
     <p class="red big"><strong>Just <%= number_to_currency product.price, :precision => 0 %>!</strong></p>
     <center>
       <%= link_to image_tag('add-to-cart.png', :width => 280), buy_product_path(product) %>
