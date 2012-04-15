@@ -24,8 +24,10 @@ Lopr::Application.routes.draw do
     resources :pages do
       put :sort, :on => :collection
     end
+    resources :images
     root :to => 'application#dashboard'
   end
+  post 'tinymce_assets' => 'admin/images#upload'
   
   resources :events, :path => 'now', :only => :index
   resources :speakers, :path => '', :only => :show

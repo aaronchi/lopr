@@ -1,23 +1,10 @@
-$red: #ED1C24;
-$orange: #F15A29;
-$light-orange: #f5c08e;
-body {
-  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
-  font-weight: 300;
-  font-size:14px;
-  color: #444;
-  line-height:1.4;
-}
-a {text-decoration:none;color:$orange;
-  &:hover {text-decoration:underline;}
-}
 #wrapper {
   width:990px;
   margin:0 auto;
 }
 #flash {padding:9px 20px;background:#fcf8d3;}
 #header {
-  margin-bottom:10px;
+  margin-bottom:20px;
   &.admin {padding:10px 0;border-bottom:2px solid #dcdcde;margin-bottom:10px;}
   position:relative;
   @include pie-clearfix;
@@ -46,7 +33,7 @@ a {text-decoration:none;color:$orange;
   .col {float:left;margin:10px 0 10px 44px;}
   .span4 {width:300px;}
   .span3 {width:210px;}
-  h4 {margin:10px 0;line-height:1.2;}
+  h4 {margin:10px 0;line-height:1.2;color:$orange;}
   
 }
 .speaker {
@@ -55,6 +42,7 @@ a {text-decoration:none;color:$orange;
 }
 
 .speaker2 {
+  h3 {color:$orange;}
   img {display:block;float:left;}
   .entry {margin-left:320px;padding:10px 20px;background:#f3f3f3;
   }
@@ -66,6 +54,20 @@ a {text-decoration:none;color:$orange;
   h4 {font-size:15px;text-align:center;background:#D1D3D4;padding:10px 0;margin:5px 0;color:#222;}
 }
 
+.buy {
+  margin-top:30px;
+  background: #E6E7E8;
+  .top {
+    text-align:center;
+    background: #D1D3D4;
+    padding:10px 20px;
+  }
+  .main {
+    padding:20px;
+    margin: 0 200px;
+  }
+}
+
 img.disabled {
   @include opacity(0.25);
 }
@@ -73,10 +75,10 @@ img.disabled {
   &.main {
     margin-bottom:40px;
     img {float:left;border:0;padding:0;}
-    h4 {font-size:20px;}
+    h4 {font-size:20px;color:$orange;}
     .entry {margin-left:320px;background:#d8df20;padding:2px 20px 10px 20px;font-size:17px;color:#58595B;height:288px;}
   }
-  h4 {font-size:14px;}
+  h4 {font-size:14px;color:$orange;}
   img {border:1px solid #d8df20;padding:5px;}
   .entry {padding:6px;margin-right:24px;font-size:13px;}
 }
@@ -97,18 +99,6 @@ img.disabled {
 }
 
 img.o {margin-left:10px;margin-top:-5px;}
-
-.box {
-  padding:10px;
-  margin:10px 0;
-  &.grey {background: #f3f3f3;}
-  &.orange {background: $light-orange;}
-  &.yellow {@include border-radius(10px);background:#fcf8d3;width:750px;font-size:20px;padding:10px 50px;margin:0 auto;font-style:italic;}
-  &.blockquote {width:730px;margin:10px auto;}
-  .quote {padding:10px;font-size:13px;
-  p {margin-bottom:10px;}
-  }
-}
 
 .product-box {
   width:800px;margin:0px auto;padding:10px 0;
@@ -139,36 +129,23 @@ img.o {margin-left:10px;margin-top:-5px;}
   .content {margin-left:340px;}
 }
 
-
-span.orange, p.orange {color:$orange;}
 h2.grey {color:#444;}
-h1 {margin:0;padding:0;font-size:40px;color: $orange;}
-h2 {margin:0;padding:0;font-size:32px;color: $orange;}
-h3 {margin:0;padding:0;font-size:30px;color: $orange;}
-h4 {margin:0;padding:0;font-size:20px;color: $orange;}
-h5 {margin:0;padding:0;font-size:18px;color: $orange;}
-.red {color:$red;}
 .black {color:#444;}
 .center {text-align:center;}
+.largest {font-size:24px;}
+.larger {font-size:20px;}
+.large {font-size:16px;}
 .big {font-size:20px;}
 .small,small {font-size:12px;}
 .tiny {font-size:9px;}
-strong {font-weight:bold;}
+strong,.strong {font-weight:bold;}
 .clear {clear:both;}
 .right {float:right;}
 .left {float:left;}
 .uppercase {text-transform:uppercase;}
-
-.content {
-  h5 {line-height:1.4;margin-bottom:1em;}
-  ul  { margin: 0 0 15px 0; padding: 0 0 0 30px;
-   li  { list-style-type: disc; }
-  }
-  p {margin-bottom:1em;}
-}
+em {font-style:italic;}
 
 .clearfix {@include pie-clearfix;}
-
 
 .cntSeparator {
   font-size: 32px;

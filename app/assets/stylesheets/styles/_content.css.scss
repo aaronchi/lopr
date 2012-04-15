@@ -1,0 +1,51 @@
+body {
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  font-weight: 300;
+  font-size:14px;
+  color: #444;
+  line-height:1.4;
+}
+a {text-decoration:none;color:$orange;
+  &:hover {text-decoration:underline;}
+}
+.content, #tinymce {
+  h3,h4,h5 {line-height:1.4;margin-bottom:1em;}
+  ul  { margin: 0 0 15px 0; padding: 0 0 0 30px;
+   li  { list-style-type: disc; }
+  }
+  p {margin-bottom:1em;}
+}
+span.orange, p.orange {color:$orange;}
+.red {color:$red;}
+.green {color:$green;}
+h1,h2,h3,h4,h5 {font-weight:normal;}
+h1 {margin:0;padding:0;font-size:40px;color: $red;}
+h2 {margin:0;padding:0;font-size:32px;color: $red;}
+h3 {margin:0;padding:0;font-size:28px;color: $red;}
+h4 {margin:0;padding:0;font-size:20px;color: $red;}
+h5 {margin:0;padding:0;font-size:18px;color: $red;}
+img.left-align {float:left;margin-right:30px;display:block;}
+img.right-align {float:right;margin-left:30px;display:block;}
+.testimonials {
+  padding:20px;
+  margin:20px 0;
+  background: $light-orange;
+  font-size:13px;
+  color:#222;
+  hr {
+    display:block;border:none;width:30px;height:30px;background:image-url("o.png") no-repeat;margin:10px 0;
+  }
+}
+.box {
+  padding:10px;
+  margin:10px 0;
+  &.grey {background: #f3f3f3;
+    h1,h2,h3,h4,h5 {color:$orange;}
+  }
+  &.orange {background: $light-orange;}
+  &.yellow {@include border-radius(10px);background:#fcf8d3;width:750px;font-size:20px;padding:10px 50px;margin:0 auto;font-style:italic;}
+  &.blockquote {width:730px;margin:10px auto;}
+  .quote {padding:10px;font-size:13px;
+  p {margin-bottom:10px;}
+  }
+}

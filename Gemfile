@@ -8,6 +8,7 @@ gem 'settingslogic'
 gem 'airbrake'
 #gem 'aweber'
 gem 'mechanize'
+gem 'possessive'
 
 # Authentication
 gem 'devise'
@@ -36,6 +37,7 @@ gem 'carrierwave'
 ## Asset Pipeline
 gem 'jquery-rails'
 gem 'tinymce-rails'
+  gem 'tinymce-rails-imageupload'
 
 ## Assets
 group :assets do
