@@ -9,7 +9,7 @@
 <% end %>
 </center>
 <div class="content">
-<%= raw @product.description.gsub('{buy_button}',buy_button) %>  
+<%= raw @product.description.gsub('{buy_button}',buy_button) if @product.description %>  
 
 <%= buy_button(true) %>
 

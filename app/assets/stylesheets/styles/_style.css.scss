@@ -129,12 +129,23 @@ img.o {margin-left:10px;margin-top:-5px;}
   .content {margin-left:340px;}
 }
 
+.box {
+  padding:10px;
+  margin:10px 0;
+  &.grey {background: #f3f3f3;
+    h1,h2,h3,h4,h5 {color:$orange;}
+  }
+  &.orange {background: $light-orange;}
+  &.yellow {@include border-radius(10px);background:#fcf8d3;width:750px;font-size:20px;padding:10px 50px;margin:0 auto;font-style:italic;}
+  &.blockquote {width:730px;margin:10px auto;}
+  .quote {padding:10px;font-size:13px;
+  p {margin-bottom:10px;}
+  }
+}
+
 h2.grey {color:#444;}
 .black {color:#444;}
 .center {text-align:center;}
-.largest {font-size:24px;}
-.larger {font-size:20px;}
-.large {font-size:16px;}
 .big {font-size:20px;}
 .small,small {font-size:12px;}
 .tiny {font-size:9px;}

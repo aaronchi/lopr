@@ -1,42 +1,5 @@
 <% if @product.speaker %>
-<center>
-<% if @product.youtube_id.blank? %>
-<h3><strong><%= @product.name %></strong></h3>
-<div class="larger"><em><%= @product.title %></em></div><br>
-<% else %>
-<div class="video">
-   <%= embed_video @product.youtube_id %>
-</div>
-<% end %>
-</center>
-<div class="content">
-<%= raw @product.description.gsub('{buy_button}',buy_button) %>  
-
-<%= buy_button(true) %>
-
-</div>
-
-<div class="buy">
-  <div class="top">
-    <p class="largest"><em>Secure Order Form</em></p>
-    <p class="larger red"><em>YES!! I Want Instant Access Now!</em></p>
-    <p class="large"><em>I understand that I’ll receive instant access to:</em></p>
-  </div>
-  <div class="main content">
-    <h4 class="center"><%= @product.speaker.name.possessive %> '<%= @product.name %>'</h4>
-    <%= raw @product.short_description %>
-    <center>
-    <p class="large red">
-      Regular Pricing<br><%= number_to_currency @product.regular_price, :precision => 0 %>
-    </p>
-    <p class="large red">
-      Love On Purpose Revolution<br><%= number_to_currency @product.price, :precision => 0 %><br>
-      <span class="small black">(Exclusive offer)</span>
-    </p>
-    </center>
-    <%= buy_button %>
-  </div>
-</div>
+<%= render 'sales' %>
 <% else %>
 <h2 class="uppercase"><%= resource.name %></h2>
 <div class="content">
