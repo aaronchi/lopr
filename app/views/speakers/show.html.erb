@@ -1,15 +1,2 @@
-<h1><%= resource.name %></h1>
-<div class="clearfix">
-<%= image_tag resource.image_url, :style => 'float:left' %>
-<div style="margin-left:320px;">
-<%= raw resource.bio %>
-</div>
-</div>
-
-<%= div_for resource.products do |product| %>
-  <h2><%= product.name %></h2>
-  <%= raw product.description %>
-  <%= link_to buy_product_path(product), :class => "woo-sc-button  custom large" do %>
-    <span class="woo-">Buy Now</span>
-  <% end %>
-<% end %>
+<% @product = @speaker.products.first %>
+<%= render 'products/sales' if @product %>
