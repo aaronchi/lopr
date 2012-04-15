@@ -33,7 +33,7 @@ style_formats:
   - title: 'Green Text'
     inline: 'span'
     classes : 'green'
-  - title: 'Testimonials'
+  - title: 'Orange Box'
     block: 'div'
     classes: 'testimonials'
     wrapper: true

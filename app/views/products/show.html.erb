@@ -1,5 +1,14 @@
 <% if @product.speaker %>
-
+<center>
+<% if @product.youtube_id.blank? %>
+<h3><strong><%= @product.name %></strong></h3>
+<div class="larger"><em><%= @product.title %></em></div><br>
+<% else %>
+<div class="video">
+   <%= embed_video @product.youtube_id %>
+</div>
+<% end %>
+</center>
 <div class="content">
 <%= raw @product.description.gsub('{buy_button}',buy_button) %>  
 
