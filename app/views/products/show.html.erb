@@ -27,7 +27,7 @@
     <%= raw @product.short_description %>
     <center>
     <p class="large red">
-      Regular Pricing<br>$<%= number_to_currency @product.regular_price, :precision => 0 %>
+      Regular Pricing<br><%= number_to_currency @product.regular_price, :precision => 0 %>
     </p>
     <p class="large red">
       Love On Purpose Revolution<br><%= number_to_currency @product.price, :precision => 0 %><br>
