@@ -34,6 +34,7 @@ class User < ActiveRecord::Base
   
   def subscribe(list)
     agent = Mechanize.new
+    agent.set_proxy('127.0.0.1', 8118) if Rails.env.development?
     agent.keep_alive = false
     begin
       form = agent.get(LISTS[list]).forms.first
@@ -42,11 +43,20 @@ class User < ActiveRecord::Base
       response = agent.submit(form)
       success = response.uri.to_s.include?('thankyou') || response.uri.to_s.include?('already_subscribed')
       logger.error "Subscribe Error: #{email} - #{response.uri.to_s}" unless success
+      User.switch_ip if Rails.env.development?
       return success
     rescue => ex
-      notify_airbrake(ex)
+      Airbrake.notify(ex) if Rails.env.production?
       return false
     end
+  end
+  
+  require 'net/telnet'
+  def self.switch_ip
+    t = TCPSocket.new("localhost",'9051')
+    t.puts("authenticate\r\n")
+    t.puts("signal NEWNYM\r\n")
+    t.puts("quit\r\n")
   end
   
   require 'csv'
@@ -60,8 +70,9 @@ class User < ActiveRecord::Base
   end
   
   def self.resubscribe
-    User.unsubscribed.limit(1).each do |u|
+    User.unsubscribed.limit(10).each do |u|
       u.update_attribute :subscribed, u.subscribe('lopr2012')
+      sleep 2 + Random.rand(11)
     end
   end
   
