@@ -1,3 +1,4 @@
+//= require cocoon
 //= require jquery-ui/jquery.ui.core
 //= require jquery-ui/jquery.ui.widget
 //= require jquery-ui/jquery.ui.mouse

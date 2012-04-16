@@ -10,9 +10,10 @@
   <%= f.input :redirect_url %>
   <%= f.input :youtube_id %>
   <%= f.association :speaker, :collection => Speaker.unscoped.order(:name) %>
-  <%= content_tag :div, image_tag(resource.image_url), :class => 'input indent' if resource.image? %>
-  <%= f.input :image, :as => :file %>
-  <%= f.hidden_field :image_cache %>
+  <%= f.fields_for :images, f.object.images.empty? ? f.object.images.build : f.object.images do |fi| %>
+    <%= render 'image_fields', :f => fi %>
+  <% end %>
+  <div class="indent input small"><%= link_to_add_association '+ Add Another Image', f, :images %></div>
   <%= f.input :short_description, :input_html => {:class => "tinymce"} %>
   <%= f.input :description, :input_html => {:class => "tinymce wide"} %>
   

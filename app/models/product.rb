@@ -3,14 +3,15 @@ class Product < ActiveRecord::Base
   ## Mmodel
   extend FriendlyId
   friendly_id :name, :use => :slugged
-  mount_uploader :image, ImageUploader
   
   ## Security
-  attr_accessible :name, :title, :price, :regular_price, :product_id, :cart_pid, :youtube_id, :speaker_id, :short_description, :description, :image, :image_cache, :redirect_url, :as => :admin
+  attr_accessible :name, :title, :price, :regular_price, :product_id, :cart_pid, :youtube_id, :speaker_id, :short_description, :description, :redirect_url, :images_attributes, :as => :admin
   
   ## Associations
   belongs_to :speaker
   has_many :orders, :primary_key => :product_id
+  has_many :images, :as => :imageable
+    accepts_nested_attributes_for :images, :allow_destroy => true, :reject_if => lambda { |a| a[:image].blank? }
   
   ## Validations
   validates_presence_of :name, :product_id, :cart_pid

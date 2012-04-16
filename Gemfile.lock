@@ -50,6 +50,7 @@ GEM
     childprocess (0.3.1)
       ffi (~> 1.0.6)
     chunky_png (1.2.5)
+    cocoon (1.0.20)
     coffee-rails (3.2.2)
       coffee-script (>= 2.2.0)
       railties (~> 3.2.0)
@@ -315,12 +316,13 @@ DEPENDENCIES
   attribute_normalizer
   capybara
   carrierwave
+  cocoon
   coffee-rails (~> 3.2.1)
   compass-rails
   devise
   factory_girl_rails
   ffaker
-  fog (>= 1.1.2)
+  fog
   forgery
   friendly_id
   guard-bundler
@@ -348,7 +350,7 @@ DEPENDENCIES
   sass-rails (~> 3.2.3)
   sentient_user
   settingslogic
-  simple_form (~> 2.0.0.rc)
+  simple_form
   spork (~> 1.0rc)
   tabs_on_rails
   taps

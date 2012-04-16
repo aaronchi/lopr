@@ -1,6 +1,11 @@
 class ImageUploader < ApplicationUploader
   
-  process :resize_to_limit => [300,300]
+  version :large do
+    process :resize_to_limit => [300,300]
+  end
+  version :product do
+    process :resize_to_limit => [900,250]
+  end
   version :medium do
     process :resize_to_limit => [250,250]
   end

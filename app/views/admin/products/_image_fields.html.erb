@@ -1,0 +1,8 @@
+<div class="nested-fields">
+  <%= content_tag :div, image_tag(f.object.image_url(:small)), :class => 'input indent' if f.object.image? %>
+  <%= f.input :image, :as => :file do %>
+    <%= f.input_field :image %>
+    <%= link_to_remove_association("x remove image", f, :class => 'small indent') %>
+  <% end %>
+  <%= f.hidden_field :image_cache %>
+</div>

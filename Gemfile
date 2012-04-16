@@ -26,13 +26,14 @@ gem 'inherited_resources'
 gem 'sentient_user'
 
 ## Views
-gem 'simple_form', '~> 2.0.0.rc'
+gem "cocoon"
+gem 'simple_form'
 gem 'tabs_on_rails'
 
 ## Uploads
 gem 'carrierwave'
   gem 'rmagick', :require => 'RMagick'
-  gem 'fog', '>= 1.1.2'
+  gem 'fog'
   
 ## Asset Pipeline
 gem 'jquery-rails'

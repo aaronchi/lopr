@@ -23,7 +23,9 @@
   </div>
   <div class="main content">
     <h4 class="center"><%= @product.speaker.name.possessive %> '<%= @product.name %>'</h4>
+    <div class="inner">
     <%= raw @product.short_description %>
+    </div>
     <center>
     <p class="large red">
       Regular Pricing<br><%= number_to_currency @product.regular_price, :precision => 0 %>
@@ -32,6 +34,11 @@
       Love On Purpose Revolution<br><%= number_to_currency @product.price, :precision => 0 %><br>
       <span class="small black">(Exclusive offer)</span>
     </p>
+    <div class="images">
+    <% @product.images.each do |image| %>
+      <div class="frame"><span></span><%= image_tag image.image_url(:product) %></div>
+    <% end %>
+    </div>
     </center>
     <%= buy_button %>
   </div>
