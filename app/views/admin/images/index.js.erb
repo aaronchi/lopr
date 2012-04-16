@@ -1,1 +1,1 @@
-var tinyMCEImageList = <%= raw Image.order(:name).map{|i| [i.name,i.image_url]}.to_json %>;
+var tinyMCEImageList = <%= raw Image.where(:imageable_id => nil).order(:name).map{|i| [i.name,i.image_url]}.to_json %>;
