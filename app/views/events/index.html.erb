@@ -1,21 +1,23 @@
+<% if @event %>
 <% if @next_event %>
 <div class="box clearfix">
-  
     <div class="right" style="margin-right:-30px;">
       <%= countdown(@next_event) %>
     </div>
     <h2>Next LIVE Session in:</h2> 
 </div>
+<% end %>
 <div class="clearfix">
     <div style="float:left;">
-        <%= embed_event @next_event %>
+        <%= @event.over? ? embed_replay(@event) : embed_event(@event) %>
     </div>
     <div style="float:right;">
-        <%= embed_questions @next_event %>
+        <%= embed_questions @event unless @event.over? %>
     </div>
 </div>
 <% else %>
 <h2>No events scheduled</h2>
 <% end %>
 
-<%= render 'pages/sponsors' %> 
+<%= render 'pages/sponsors' %>
+<%= @event.name %>

@@ -5,6 +5,7 @@ class EventsController < ApplicationController
   
   def index
     @next_event = Event.next.first
+    @event = Event.current.first || Event.last.first || Event.next.first
   end
   
 end

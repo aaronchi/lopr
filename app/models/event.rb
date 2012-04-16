@@ -7,7 +7,9 @@ class Event < ActiveRecord::Base
   belongs_to :speaker
   
   ## Scopes
-  scope :next, lambda {where("end_time > ?", Time.now)}
+  scope :last, lambda {where("end_time < ?", Time.now)}
+  scope :next, lambda {where("start_time > ?", Time.now)}
+  scope :current, lambda {where("start_time <= ? AND end_time > ?", Time.now, Time.now)}
   
   ## Scopes
   default_scope :order => 'start_time'
