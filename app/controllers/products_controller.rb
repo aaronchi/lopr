@@ -1,8 +1,13 @@
 class ProductsController < ApplicationController
   
   inherit_resources
-  before_filter :authenticate_user!, :only => :buy
+  before_filter :authenticate_user!
+  before_filter :authenticate_buyer!, :only => :show
   skip_before_filter :verify_authenticity_token, :only => :callback
+  
+  def authenticate_buyer!
+    redirect_to root_path unless current_user.orders.where(:product_id => resource.product_id).exists?
+  end
   
   def buy
     #TODO: Set any session vars here if we need to
@@ -11,13 +16,14 @@ class ProductsController < ApplicationController
   end
   
   def callback
-    Order.where(:order_id => params['orderID']).first_or_create({
+    order = Order.where(:order_id => params['orderID']).first_or_create({
       :user_id => current_user.id,
       :product_id => params['plist'],
       :total => params['Total'],
       :status => params['status']
     }, :without_protection => true)
-    redirect_to thanks_path
+    product = Product.find_by_product_id(params['plist'])
+    redirect_to product.redirect_url.blank? ? product_path(product) : product.redirect_url
   end
   
   def download

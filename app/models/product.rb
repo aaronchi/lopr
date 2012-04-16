@@ -15,6 +15,7 @@ class Product < ActiveRecord::Base
   
   ## Validations
   validates_presence_of :name, :product_id, :cart_pid
+  validates_url :redirect_url, :allow_blank => true
   
   ## Scope
   scope :global, where(:speaker_id => nil)

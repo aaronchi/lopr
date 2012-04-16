@@ -2,9 +2,12 @@ class User < ActiveRecord::Base
   
   ## Model
   devise :database_authenticatable, :registerable, :confirmable, :recoverable, :rememberable, :trackable, :validatable
-
+  
   ## Security
   attr_accessible :name, :email, :password, :password_confirmation, :remember_me
+  
+  ## Associations
+  has_many :orders
   
   ## Validations
   validates_presence_of :name
@@ -73,7 +76,7 @@ class User < ActiveRecord::Base
   def self.resubscribe
     User.unsubscribed.limit(1000).each do |u|
       u.update_attribute :subscribed, u.subscribe('lopr2012')
-      sleep 2 + Random.rand(11)
+      sleep 2 + Random.rand(10)
     end
   end
   
