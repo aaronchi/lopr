@@ -6,7 +6,7 @@ class Order < ActiveRecord::Base
   
   after_create :subscribe_user
   def subscribe_user
-    List.subscribe('loprpurchases12', user) rescue nil
+    user.subscribe('loprpurchases12')
   end
   
 end

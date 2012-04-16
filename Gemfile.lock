@@ -289,6 +289,8 @@ GEM
     tinymce-rails-imageupload (3.4.9)
       railties (>= 3.1)
       tinymce-rails (~> 3.4.9)
+    tor-privoxy (0.1.1)
+      mechanize
     treetop (1.4.10)
       polyglot
       polyglot (>= 0.3.1)
@@ -357,5 +359,6 @@ DEPENDENCIES
   thin
   tinymce-rails
   tinymce-rails-imageupload
+  tor-privoxy
   uglifier (>= 1.0.3)
   validate_url

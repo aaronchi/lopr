@@ -8,6 +8,7 @@ gem 'settingslogic'
 gem 'airbrake'
 #gem 'aweber'
 gem 'mechanize'
+  gem 'tor-privoxy'
 gem 'possessive'
 
 # Authentication
