@@ -34,13 +34,17 @@ class User < ActiveRecord::Base
   
   def subscribe(list)
     agent = Mechanize.new
+    agent.keep_alive = false
     begin
       form = agent.get(LISTS[list]).forms.first
       form["name"] = name
       form["email"] = email
       response = agent.submit(form)
-      return response.uri.to_s.include?('thankyou') || response.uri.to_s.include?('already_subscribed')
-    rescue
+      success = response.uri.to_s.include?('thankyou') || response.uri.to_s.include?('already_subscribed')
+      logger.error "Subscribe Error: #{email} - #{response.uri.to_s}" unless success
+      return success
+    rescue => ex
+      notify_airbrake(ex)
       return false
     end
   end
