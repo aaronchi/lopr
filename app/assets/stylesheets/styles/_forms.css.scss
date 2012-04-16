@@ -1,8 +1,17 @@
 .indent {margin-left:120px;}
-
+#error_explanation {
+  margin-bottom:20px;
+  h2 {font-size:16px;}
+  ul  { margin: 0 0 15px 0; padding: 0 0 0 30px;
+    li  { list-style-type: disc; }
+  }
+}
 .simple_form {
   
   div.input {
+    
+    .error {font-size:12px;margin-left:10px;color:$red;}
+    
     clear:both;
     margin-bottom: 10px;
     &.boolean {margin-left:120px;}

@@ -8,6 +8,7 @@ class User < ActiveRecord::Base
   
   ## Validations
   validates_presence_of :name
+  validates_length_of :name, :minimum => 3
   
   ## Scopes
   scope :unsubscribed, where(:subscribed => false, :confirmation_token => nil)
@@ -70,7 +71,7 @@ class User < ActiveRecord::Base
   end
   
   def self.resubscribe
-    User.unsubscribed.limit(10).each do |u|
+    User.unsubscribed.limit(1000).each do |u|
       u.update_attribute :subscribed, u.subscribe('lopr2012')
       sleep 2 + Random.rand(11)
     end
