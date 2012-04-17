@@ -30,7 +30,7 @@ Lopr::Application.routes.draw do
   post 'tinymce_assets' => 'admin/images#upload'
   
   resources :events, :path => 'now', :only => :index
-  resources :speakers, :path => '', :only => :show
+  
   resources :products, :only => :show do 
     get :buy, :on => :member
     get :order, :on => :collection
@@ -39,7 +39,7 @@ Lopr::Application.routes.draw do
   post 'products/callback' => "products#callback"
   get 'welcome' => 'pages#welcome', :as => :welcome
   get 'thanks' => 'pages#thanks', :as => :thanks
-  
+  resources :speakers, :path => '', :only => :show
   authenticated :user do
     root :to => "pages#start"
   end

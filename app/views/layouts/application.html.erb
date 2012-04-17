@@ -8,15 +8,14 @@
     <%= csrf_meta_tags %>
   </head>
   <body class="<%= params[:controller] %>-layout">
-    
     <div id="wrapper">
       <%= render 'header' %>
       <% if alert || notice %>
       <div id="flash"><%= alert %><%= notice %></div>
       <% end %>
       <%= yield %>
-      <%= render 'footer' %>    
+      <%= render 'footer' %>
+      <%= render 'tracking' if Rails.env.production? %> 
     </div>
-    
   </body>
 </html>

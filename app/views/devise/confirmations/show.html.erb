@@ -2,10 +2,11 @@
 <h2>One More Step to Go...</h2>
 </div>
 
-<%= simple_form_for resource, :as => resource_name, :url => update_user_confirmation_path, :html => {:method => 'put'}, :id => 'activation-form' do |f| %>
+<%= simple_form_for resource, :as => resource_name, :url => update_user_confirmation_path, :html => {:method => 'put', :class => 'block'}, :id => 'activation-form' do |f| %>
   <%= devise_error_messages! %>
   <%= f.input :password %>
   <%= f.input :password_confirmation %>
+  <%= f.hidden_field :remember_me, :value => 1 %>
   <%= hidden_field_tag :confirmation_token, params[:confirmation_token] %>
   <%= f.submit "Activate" %>
 <% end %>
