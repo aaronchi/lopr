@@ -1,9 +1,9 @@
 class ProductsController < ApplicationController
   
   inherit_resources
+  skip_before_filter :verify_authenticity_token, :only => :callback
   before_filter :authenticate_user!
   before_filter :authenticate_buyer!, :only => :show
-  skip_before_filter :verify_authenticity_token, :only => :callback
   
   def authenticate_buyer!
     redirect_to root_path unless current_user.orders.where(:product_id => resource.product_id).exists?
