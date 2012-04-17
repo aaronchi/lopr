@@ -4,7 +4,7 @@
 <div class="larger"><em><%= @product.title %></em></div><br>
 <% else %>
 <div class="video">
-   <%= embed_video @product.youtube_id %>
+   <%= embed_video @product.youtube_id, true %>
 </div>
 <% end %>
 </center>

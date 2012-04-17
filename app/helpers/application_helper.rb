@@ -9,8 +9,8 @@ module ApplicationHelper
     bonus.download ? bonus_path(bonus) : bonus.url
   end
   
-  def embed_video(id)
-    autoplay = current_user && current_user.sign_in_count > 1 ? 0 : 1
+  def embed_video(id, play = false)
+    autoplay = !play && current_user && current_user.sign_in_count > 1 ? 0 : 1
     %(<iframe width="560" height="315" src="http://www.youtube.com/embed/#{id}?rel=0&autoplay=#{autoplay}" frameborder="0" allowfullscreen></iframe>).html_safe
   end
   
