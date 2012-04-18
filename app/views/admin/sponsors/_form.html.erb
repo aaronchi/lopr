@@ -2,7 +2,7 @@
 <%= tinymce %>
 <%= simple_form_for resource, :url => form_resource_path, :html => {:multipart => true} do |f| %>
   <%= f.input :name %>
-  <%= image_tag(resource.image_url) if resource.image? %>
+  <div class="indent"><%= image_tag(resource.image_url) if resource.image? %></div>
   <%= f.input :image, :as => :file %>
   <%= f.hidden_field :image_cache %>
   <%= f.input :url %>

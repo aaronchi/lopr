@@ -48,6 +48,14 @@
   }
 }
 
+.sponsor-box {
+  margin:20px 0;
+  @include pie-clearfix;
+  img {float:left}
+  div.large {margin-bottom:10px;}
+  div.wrap {margin-left:170px;}
+}
+
 .download {
   img {display:block;}
   img.image {width:156px;height:156px;}
