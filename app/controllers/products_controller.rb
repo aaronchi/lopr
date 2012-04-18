@@ -6,7 +6,7 @@ class ProductsController < ApplicationController
   before_filter :authenticate_buyer!, :only => :show
   
   def authenticate_buyer!
-    redirect_to root_path unless current_user.orders.where(:product_id => resource.product_id).exists?
+    redirect_to root_path unless current_user.admin? || current_user.orders.where(:product_id => resource.product_id).exists?
   end
   
   def buy
