@@ -11,7 +11,6 @@ class User < ActiveRecord::Base
   
   ## Validations
   validates_presence_of :name
-  validates_length_of :name, :minimum => 3
   
   ## Scopes
   scope :unsubscribed, where(:subscribed => false, :confirmation_token => nil)
