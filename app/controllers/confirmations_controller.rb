@@ -6,6 +6,15 @@ class ConfirmationsController < Devise::ConfirmationsController
   # don't want to enable logged users to access the confirmation page.
   skip_before_filter :require_no_authentication
   skip_before_filter :authenticate_user!
+  
+  def callback
+    user = User.find_by_email(params[:email])
+    if user && !user.confirmed?
+      redirect_to confirmation_url(user, :confirmation_token => user.confirmation_token)
+    else
+      redirect_to root_path
+    end
+  end
 
   # PUT /resource/confirmation
   def update

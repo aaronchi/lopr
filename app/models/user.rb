@@ -20,9 +20,9 @@ class User < ActiveRecord::Base
     name.split(' ').first
   end
   
-  ## Sign up to email list after confirm
+  ## TODO: Remove after implemetning email signup
   def confirm!
-    self.subscribed = subscribe('lopr2012')
+    self.subscribed = true
     super
   end
   
