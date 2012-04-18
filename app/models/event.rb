@@ -6,13 +6,16 @@ class Event < ActiveRecord::Base
   ## Associations
   belongs_to :speaker
   
+  ## Validations
+  validates_datetime :end_time, :after => :start_time
+  
   ## Scopes
-  scope :last, lambda {where("end_time < ?", Time.now)}
-  scope :next, lambda {where("start_time > ?", Time.now)}
+  scope :last, lambda {where("end_time < ?", Time.now).order('start_time desc')}
+  scope :next, lambda {where("start_time > ?", Time.now).order('start_time')}
   scope :current, lambda {where("start_time <= ? AND end_time > ?", Time.now, Time.now)}
   
   ## Scopes
-  default_scope :order => 'start_time'
+  #default_scope :order => 'start_time'
   
   def over?
     Time.now.utc > end_time

@@ -19,10 +19,12 @@ gem 'attribute_normalizer'
 gem 'friendly_id'
 gem 'kaminari'
 gem 'sanitize'
+gem 'validates_timeliness'
 gem 'validate_url'
 
 ## Controllers
 gem 'inherited_resources'
+  gem 'has_scope'
 gem 'sentient_user'
 
 ## Views
