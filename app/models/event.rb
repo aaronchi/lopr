@@ -1,10 +1,14 @@
 class Event < ActiveRecord::Base
   
   ## Security
-  attr_accessible :name, :speaker_id, :event_id, :ia_id, :start_time, :end_time, :description, :as => :admin
+  attr_accessible :name, :speaker_id, :event_id, :ia_id, :start_time, :end_time, :description, :audio_download_attributes, :transcript_download_attributes, :as => :admin
   
   ## Associations
   belongs_to :speaker
+  has_one :audio_download, :as => :downloadable, :class_name => 'Download', :conditions => {:download_type_cd => 1}
+    accepts_nested_attributes_for :audio_download, :reject_if => proc { |a| a["remote_asset_url"].blank? }
+  has_one :transcript_download, :as => :downloadable, :class_name => 'Download', :conditions => {:download_type_cd => 2}
+    accepts_nested_attributes_for :transcript_download, :reject_if => proc { |a| a["remote_asset_url"].blank? }
   
   ## Validations
   validates_datetime :end_time, :after => :start_time
@@ -22,11 +26,11 @@ class Event < ActiveRecord::Base
   end
   
   def has_audio?
-    false
+    !audio_download.nil?
   end
   
   def has_transcript?
-    false
+    !transcript_download.nil?
   end
   
   def timecode

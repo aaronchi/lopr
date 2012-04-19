@@ -7,6 +7,24 @@
   <%= f.input :end_time %>
   <%= f.input :ia_id, :label => 'TS IAID' %>
   <%= f.input :event_id, :label => 'TS eventID' %>
+  <% if f.object.audio_download %>
+  <div class="input string">
+    <label>Audio File</label><small><%= f.object.audio_download.asset.file.filename %> (<%= number_to_human_size(f.object.audio_download.file_size) %>)</small>
+  </div>
+  <% else %>
+  <%= f.fields_for :audio_download, f.object.audio_download ? f.object.audio_download : f.object.build_audio_download do |df| %>
+    <%= df.input :remote_asset_url, :label => "Audio File" %>
+  <% end %>
+  <% end %>
+  <% if f.object.transcript_download %>
+  <div class="input string">
+    <label>Transcript File</label><small><%= f.object.transcript_download.asset.file.filename %> (<%= number_to_human_size(f.object.transcript_download.file_size) %>)</small>
+  </div>
+  <% else %>
+  <%= f.fields_for :transcript_download, f.object.transcript_download ? f.object.transcript_download : f.object.build_transcript_download do |df| %>
+    <%= df.input :remote_asset_url, :label => "Transcript File" %>
+  <% end %>
+  <% end %>
   <%= f.input :description, :input_html => {:class => "tinymce"} %>
   <div class="buttons">
   <%= f.submit %>

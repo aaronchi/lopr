@@ -19,6 +19,7 @@ gem 'attribute_normalizer'
 gem 'friendly_id'
 gem 'kaminari'
 gem 'sanitize'
+gem 'simple_enum'
 gem 'validates_timeliness'
 gem 'validate_url'
 

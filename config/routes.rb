@@ -35,6 +35,7 @@ Lopr::Application.routes.draw do
   resources :products, :only => :show do 
     get :buy, :on => :member
     get :order, :on => :collection
+    resources :downloads, :only => :show
   end
   resources :bonuses, :only => :show
   resources :sponsors, :only => :index
