@@ -26,6 +26,7 @@ Lopr::Application.routes.draw do
       put :sort, :on => :collection
     end
     resources :images
+    resources :orders
     root :to => 'application#dashboard'
   end
   post 'tinymce_assets' => 'admin/images#upload'

@@ -1,11 +1,5 @@
 <%= link_to "Add", new_resource_path, :class => 'right' %>
 <h1><%= resource_class.name.pluralize %></h1>
 <% unless collection.empty? %>
-<div class="collection" <%= "data-sort=#{request.path}/sort" if collection.first.respond_to?(:position) %>>
-<% collection.each do |record| %>
-  <%= div_for record, :class => 'record' do %>
-    <%= link_to record.name, edit_resource_path(record) %>
-  <% end %>
-<% end %>
-</div>
+<%= render 'collection', :collection => collection %>
 <% end %>
