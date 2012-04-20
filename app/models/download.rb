@@ -12,6 +12,10 @@ class Download < ActiveRecord::Base
   ## Associations
   belongs_to :downloadable, :polymorphic => true
   
+  def filename
+    read_attribute(:asset)
+  end
+  
   before_save :update_asset_attributes
   
   private

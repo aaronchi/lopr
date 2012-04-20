@@ -9,7 +9,7 @@
   <%= f.input :event_id, :label => 'TS eventID' %>
   <% if f.object.audio_download %>
   <div class="input string">
-    <label>Audio File</label><small><%= f.object.audio_download.asset.identifier %> (<%= number_to_human_size(f.object.audio_download.file_size) %>)</small>
+    <label>Audio File</label><small><%= f.object.audio_download.filename %> (<%= number_to_human_size(f.object.audio_download.file_size) %>)</small>
   </div>
   <% else %>
   <%= f.fields_for :audio_download, f.object.audio_download ? f.object.audio_download : f.object.build_audio_download do |df| %>
@@ -18,7 +18,7 @@
   <% end %>
   <% if f.object.transcript_download %>
   <div class="input string">
-    <label>Transcript File</label><small><%= f.object.transcript_download.asset.identifier %> (<%= number_to_human_size(f.object.transcript_download.file_size) %>)</small>
+    <label>Transcript File</label><small><%= f.object.transcript_download.filename %> (<%= number_to_human_size(f.object.transcript_download.file_size) %>)</small>
   </div>
   <% else %>
   <%= f.fields_for :transcript_download, f.object.transcript_download ? f.object.transcript_download : f.object.build_transcript_download do |df| %>
