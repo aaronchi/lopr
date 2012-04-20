@@ -69,6 +69,6 @@ module Lopr
     config.assets.version = '1.0'
     
     # Mail host
-    config.action_mailer.default_url_options = { :host => Settings.mail_domain }
+    config.action_mailer.default_url_options = { :host => Settings.host }
   end
 end

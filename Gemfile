@@ -3,6 +3,7 @@ source 'https://rubygems.org'
 gem 'rails', '3.2.3'
 gem 'mysql2'
 gem 'settingslogic'
+gem 'rack-canonical-host'
 
 # Utility
 gem 'airbrake'

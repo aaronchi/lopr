@@ -1,6 +1,6 @@
 defaults: &defaults
   domain: lopr.dev
-  mail_domain: lopr.dev
+  host: lopr.dev
   assets:
     storage: file
   aws:
@@ -24,6 +24,6 @@ test:
 production:
   <<: *defaults
   domain: loveonpurposerevolution.com
-  mail_domain: www.loveonpurposerevolution.com
+  host: www.loveonpurposerevolution.com
   assets:
     storage: fog
