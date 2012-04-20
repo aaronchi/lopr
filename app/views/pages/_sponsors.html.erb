@@ -1,5 +1,5 @@
 <div class="box center">
-    <h2>We'd Like to Thank Our Sponsors</h2>
+    <h2><%= link_to_if current_user, "We'd Like to Thank Our Sponsors", sponsors_path %></h2>
 </div>
 <div class="row">
   <% Sponsor.all.each_with_index do |sponsor, i| %>
