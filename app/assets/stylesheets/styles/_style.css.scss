@@ -11,10 +11,10 @@
   #banner {display:block;}
   .nav {
     &.pos {position:absolute;bottom:20px;right:20px;text-align:right;
-      a {color:#fff;}
+      a {color:#fff;@include text-shadow(0 0 2px rgba(0, 0, 0, 0.9));}
     }
     li {display:block;float:left;
-      a {display:block;float:left;margin-right:10px;padding-right:10px;font-weight:bold;text-decoration:none;@include text-shadow(0 0 2px rgba(0, 0, 0, 0.9))}
+      a {display:block;float:left;margin-right:10px;padding-right:10px;font-weight:bold;text-decoration:none;}
     }
     &.right li a {margin-right:0;padding-right:0;margin-left:10px;padding-left:10px;}
   }
