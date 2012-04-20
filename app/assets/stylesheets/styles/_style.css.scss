@@ -14,7 +14,7 @@
       a {color:#fff;}
     }
     li {display:block;float:left;
-      a {display:block;float:left;margin-right:10px;padding-right:10px;font-weight:bold;text-decoration:none;}
+      a {display:block;float:left;margin-right:10px;padding-right:10px;font-weight:bold;text-decoration:none;@include text-shadow(0 0 2px rgba(0, 0, 0, 0.9))}
     }
     &.right li a {margin-right:0;padding-right:0;margin-left:10px;padding-left:10px;}
   }

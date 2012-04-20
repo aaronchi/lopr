@@ -3,6 +3,9 @@
     <ul class="nav pos">
         <% if current_user %>
         <li>
+            <%= link_to 'Home', root_path %>
+        </li>
+        <li>
             <%= link_to current_user.name, edit_user_registration_path %>
         </li>
         <li>
