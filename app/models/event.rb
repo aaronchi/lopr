@@ -21,6 +21,16 @@ class Event < ActiveRecord::Base
   ## Scopes
   #default_scope :order => 'start_time'
   
+  def self.find_by_speaker(slug)
+    Event.includes(:speaker).where(:speakers => {:slug => slug}).first
+  end
+  
+  def self.find_by_speaker!(slug)
+    event = find_by_speaker(slug)
+    raise ActiveRecord::RecordNotFound unless event
+    event
+  end
+  
   def over?
     Time.now.utc > end_time
   end

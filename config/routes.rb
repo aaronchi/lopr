@@ -43,6 +43,7 @@ Lopr::Application.routes.draw do
   post 'products/callback' => "products#callback"
   get 'welcome' => 'pages#welcome', :as => :welcome
   get 'thanks' => 'pages#thanks', :as => :thanks
+  match 'replay:id' => 'events#show', :as => :event
   resources :speakers, :path => '', :only => :show
   authenticated :user do
     root :to => "pages#start"
