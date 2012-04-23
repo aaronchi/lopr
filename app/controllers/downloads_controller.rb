@@ -3,6 +3,7 @@ class DownloadsController < ApplicationController
   inherit_resources
   belongs_to :product
   
+  before_filter :authenticate_user!, :only => :show
   before_filter :authenticate_buyer!, :only => :show
   
   def authenticate_buyer!
