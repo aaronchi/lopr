@@ -1,15 +1,21 @@
 <% if @event.replay_over? %>
-<h2><%= @event.name %>: Replay Over</h2>
-<br>
 <div class="content">
-  <p class=large>
-    This replay is over. To purchase audio or transcripts of this webcast, please visit: <strong><%= link_to root_url + '#offer', root_url + '#offer' %></strong>
+<center>
+<h3>This replay is no longer available.</h3>
+  <p class="large">
+    Want to own ALL the sessions in the Love On Purpose Revolution so you can gain the most learning and transformation? 
   </p>
+  <p class="large">
+    Check out our limited time offers here:<br><strong><%= link_to root_url + '#offer', root_url + '#offer' %></strong>
+  </p>
+</center>
 </div>
+
 <% else %>
 <center><%= embed_replay(@event) %></center>
-<% end %>
+
 <br>
 <div class="content">
   <%= raw @event.description %>
 </div>
+<% end %>
