@@ -2,9 +2,9 @@
 <% if @next_event %>
 <div class="box clearfix">
     <div class="right" style="margin-right:-30px;">
-      <%= countdown(@next_event) %>
+      <%= countdown(@next_event) unless @event.current? %>
     </div>
-    <h2>Next LIVE Session in:</h2> 
+    <h2><%= @event.current? ? @event.name : "Next LIVE Session in:" %></h2> 
 </div>
 <% end %>
 <div class="clearfix">

@@ -7,8 +7,12 @@
     </div>
     
   <div class="col">
-    <%= countdown(Event.next.first, true) if Event.next.first %>
-    <br>
+    <% if event = Event.current.first %>
+      <h3 style="margin-bottom:0"><%= event.name %> Live Now!</h3>
+    <% else %>
+      <%= countdown(Event.next.first, true) if Event.next.first %>
+      <br>
+    <% end %>
     <%= link_to "Go to WebCast", events_path, :class => 'button' %>
   </div>
 </div>

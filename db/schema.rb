@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120419225106) do
+ActiveRecord::Schema.define(:version => 20120424024332) do
 
   create_table "assets", :force => true do |t|
     t.integer  "attachable_id"
@@ -56,8 +56,10 @@ ActiveRecord::Schema.define(:version => 20120419225106) do
     t.string   "slug"
     t.integer  "event_id"
     t.integer  "ia_id"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
+    t.datetime "created_at",        :null => false
+    t.datetime "updated_at",        :null => false
+    t.datetime "replay_start_time"
+    t.datetime "replay_end_time"
   end
 
   add_index "events", ["slug"], :name => "index_events_on_slug", :unique => true

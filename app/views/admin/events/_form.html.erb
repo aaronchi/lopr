@@ -25,6 +25,8 @@
     <%= df.input :remote_asset_url, :label => "Transcript File" %>
   <% end %>
   <% end %>
+  <%= f.input :replay_start_time, :prompt => true %>
+  <%= f.input :replay_end_time, :prompt => true %>
   <%= f.input :description, :input_html => {:class => "tinymce"} %>
   <div class="buttons">
   <%= f.submit %>

@@ -1,7 +1,7 @@
 class Event < ActiveRecord::Base
   
   ## Security
-  attr_accessible :name, :speaker_id, :event_id, :ia_id, :start_time, :end_time, :description, :audio_download_attributes, :transcript_download_attributes, :as => :admin
+  attr_accessible :name, :speaker_id, :event_id, :ia_id, :start_time, :end_time, :replay_start_time, :replay_end_time, :description, :audio_download_attributes, :transcript_download_attributes, :as => :admin
   
   ## Associations
   belongs_to :speaker
@@ -12,6 +12,7 @@ class Event < ActiveRecord::Base
   
   ## Validations
   validates_datetime :end_time, :after => :start_time
+  validates_datetime :replay_end_time, :after => :replay_start_time
   
   ## Scopes
   scope :last, lambda {where("end_time < ?", Time.now).order('start_time desc')}
@@ -33,6 +34,22 @@ class Event < ActiveRecord::Base
   
   def over?
     Time.now.utc > end_time
+  end
+  
+  def current?
+    start_time <= Time.now.utc && end_time > Time.now.utc
+  end
+  
+  def has_replay?
+    !replay_start_time.nil? && !replay_end_time.nil? && !future_replay?
+  end
+  
+  def future_replay?
+    replay_start_time >= Time.now.utc
+  end
+  
+  def replay_over?
+    replay_end_time >= Time.now.utc
   end
   
   def has_audio?

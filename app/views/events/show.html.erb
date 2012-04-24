@@ -1,4 +1,14 @@
+<% if @event.replay_over? %>
+<h2><%= @event.name %>: Replay Over</h2>
+<br>
+<div class="content">
+  <p class=large>
+    This replay is over. To purchase audio or transcripts of this webcast, please visit: <strong><%= link_to root_url + '#offer', root_url + '#offer' %></strong>
+  </p>
+</div>
+<% else %>
 <center><%= embed_replay(@event) %></center>
+<% end %>
 <br>
 <div class="content">
   <%= raw @event.description %>
