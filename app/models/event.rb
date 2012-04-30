@@ -49,7 +49,7 @@ class Event < ActiveRecord::Base
   end
   
   def replay_over?
-    replay_end_time >= Time.now.utc
+    Time.now.utc >= replay_end_time
   end
   
   def has_audio?
