@@ -3,6 +3,7 @@
 //= require jquery-ui/jquery.ui.widget
 //= require jquery-ui/jquery.ui.mouse
 //= require jquery-ui/jquery.ui.sortable
+//= require tinymce-jquery
 
 $(function() {
   
