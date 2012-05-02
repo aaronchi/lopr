@@ -14,7 +14,7 @@ class Product < ActiveRecord::Base
     accepts_nested_attributes_for :images, :allow_destroy => true, :reject_if => lambda { |a| a[:image].blank? }
   
   ## Validations
-  validates_presence_of :name, :product_id, :cart_pid
+  validates_presence_of :name
   validates_url :redirect_url, :allow_blank => true
   
   ## Scope
