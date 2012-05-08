@@ -5,7 +5,7 @@ class Product < ActiveRecord::Base
   friendly_id :name, :use => :slugged
   
   ## Security
-  attr_accessible :name, :title, :price, :regular_price, :product_id, :cart_pid, :youtube_id, :speaker_id, :short_description, :description, :redirect_url, :images_attributes, :as => :admin
+  attr_accessible :name, :title, :price, :regular_price, :product_id, :cart_pid, :digital_download, :youtube_id, :speaker_id, :short_description, :description, :redirect_url, :images_attributes, :as => :admin
   
   ## Associations
   belongs_to :speaker

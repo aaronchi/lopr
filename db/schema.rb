@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120424024332) do
+ActiveRecord::Schema.define(:version => 20120508232041) do
 
   create_table "assets", :force => true do |t|
     t.integer  "attachable_id"
@@ -104,14 +104,15 @@ ActiveRecord::Schema.define(:version => 20120424024332) do
     t.text     "short_description"
     t.string   "image"
     t.string   "slug"
-    t.datetime "created_at",        :null => false
-    t.datetime "updated_at",        :null => false
+    t.datetime "created_at",                          :null => false
+    t.datetime "updated_at",                          :null => false
     t.string   "title"
     t.float    "price"
     t.string   "redirect_url"
     t.text     "description"
     t.float    "regular_price"
     t.string   "youtube_id"
+    t.boolean  "digital_download",  :default => true, :null => false
   end
 
   add_index "products", ["product_id"], :name => "index_products_on_product_id"

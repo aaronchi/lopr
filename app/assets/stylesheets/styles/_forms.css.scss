@@ -19,6 +19,11 @@
     label{cursor:pointer;display:block;float:left;font-weight:700;padding-right:20px;width:100px;
       abbr {display:none;}
     }
+    
+    &.boolean label {
+      width:auto;float:none;
+      input {margin-right:6px;}
+    } 
    
     input.string, input.file {width:300px;}
     
