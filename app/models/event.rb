@@ -11,8 +11,8 @@ class Event < ActiveRecord::Base
     accepts_nested_attributes_for :transcript_download, :reject_if => proc { |a| a["remote_asset_url"].blank? }
   
   ## Validations
-  validates_datetime :end_time, :after => :start_time
-  validates_datetime :replay_end_time, :after => :replay_start_time
+  validates_datetime :end_time, :after => :start_time, :allow_nil => true
+  validates_datetime :replay_end_time, :after => :replay_start_time, :allow_nil => true
   
   ## Scopes
   scope :last, lambda {where("end_time < ?", Time.now).order('start_time desc')}

@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
 
+ruby '1.9.3'
 gem 'rails', '3.2.3'
 gem 'mysql2'
 gem 'settingslogic'
@@ -70,12 +71,11 @@ group :development, :test do
   gem 'rspec-rails'
 end
 
-# Factories
-gem 'factory_girl_rails'
-gem 'ffaker'
-gem 'forgery'
-
 group :test do
+  
+  # Factories
+  gem 'factory_girl_rails'
+  gem 'ffaker'
   
   # Testing Tools
   gem 'capybara'
@@ -84,14 +84,12 @@ group :test do
   #gem 'shoulda-matchers'
 
   # Guard
+  gem 'growl'
   gem 'guard-bundler'
   gem 'guard-livereload'
   gem 'guard-pow'
   gem 'guard-sass'
   gem 'guard-spork'
   gem 'guard-rspec'
-  
-  # Notifications
-  gem 'ruby_gntp'
     
 end
