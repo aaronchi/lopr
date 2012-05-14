@@ -169,7 +169,7 @@ GEM
       skinny (>= 0.1.2)
       sqlite3-ruby
       thin
-    mechanize (2.5)
+    mechanize (2.4)
       domain_name (~> 0.5, >= 0.5.1)
       mime-types (~> 1.17, >= 1.17.2)
       net-http-digest_auth (~> 1.1, >= 1.1.1)
@@ -350,7 +350,7 @@ DEPENDENCIES
   jquery-rails
   kaminari
   mailcatcher
-  mechanize
+  mechanize (= 2.4)
   mysql2
   possessive
   powder

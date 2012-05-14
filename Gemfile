@@ -9,7 +9,7 @@ gem 'rack-canonical-host'
 # Utility
 gem 'airbrake'
 #gem 'aweber'
-gem 'mechanize'
+gem 'mechanize', '2.4'
 gem 'possessive'
 
 # Authentication

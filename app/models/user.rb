@@ -38,7 +38,7 @@ class User < ActiveRecord::Base
   
   def subscribe(list)
     agent = Mechanize.new
-    agent.set_proxy('127.0.0.1', 8118) if Rails.env.development?
+    #agent.set_proxy('127.0.0.1', 8118) if Rails.env.development?
     agent.keep_alive = false
     begin
       form = agent.get(LISTS[list]).forms.first
@@ -47,7 +47,7 @@ class User < ActiveRecord::Base
       response = agent.submit(form)
       success = response.uri.to_s.include?('thankyou') || response.uri.to_s.include?('already_subscribed')
       logger.error "Subscribe Error: #{email} - #{response.uri.to_s}" unless success
-      User.switch_ip if Rails.env.development?
+      #User.switch_ip if Rails.env.development?
       return success
     rescue => ex
       Airbrake.notify(ex) if Rails.env.production?
