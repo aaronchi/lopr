@@ -81,10 +81,10 @@ GEM
     excon (0.13.4)
     execjs (1.3.2)
       multi_json (~> 1.0)
-    factory_girl (3.2.0)
+    factory_girl (3.3.0)
       activesupport (>= 3.0.0)
-    factory_girl_rails (3.2.0)
-      factory_girl (~> 3.2.0)
+    factory_girl_rails (3.3.0)
+      factory_girl (~> 3.3.0)
       railties (>= 3.0.0)
     ffaker (1.14.0)
     ffi (1.0.11)
@@ -114,7 +114,7 @@ GEM
       multi_json (~> 1.0)
     guard-pow (0.2.1)
       guard (>= 0.3.0)
-    guard-rspec (0.7.0)
+    guard-rspec (0.7.2)
       guard (>= 0.10.0)
     guard-sass (0.6.0)
       guard (>= 0.4.0)
@@ -131,7 +131,8 @@ GEM
       rubyzip
     heroku-api (0.1.6)
       excon (~> 0.13.3)
-    heroku_san (2.2.2)
+    heroku_san (3.0.0)
+      activesupport
       heroku (>= 2)
       heroku-api (>= 0.1.2)
       rake
