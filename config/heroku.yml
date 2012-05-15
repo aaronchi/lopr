@@ -12,4 +12,3 @@
 production: 
   app: lopr
   stack: cedar
-  config: *default
