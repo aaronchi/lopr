@@ -88,7 +88,7 @@ GEM
       eventmachine (>= 0.12.9)
     erubis (2.7.0)
     eventmachine (0.12.10)
-    excon (0.13.4)
+    excon (0.14.0)
     execjs (1.4.0)
       multi_json (~> 1.0)
     factory_girl (3.3.0)
@@ -98,15 +98,14 @@ GEM
       railties (>= 3.0.0)
     ffaker (1.14.0)
     ffi (1.0.11)
-    fog (1.3.1)
+    fog (0.7.2)
       builder
-      excon (~> 0.13.0)
-      formatador (~> 0.2.0)
+      excon (>= 0.6.1)
+      formatador (>= 0.1.3)
+      json
       mime-types
-      multi_json (~> 1.0)
-      net-scp (~> 1.0.4)
       net-ssh (>= 2.1.3)
-      nokogiri (~> 1.5.0)
+      nokogiri (>= 1.4.4)
       ruby-hmac
     formatador (0.2.3)
     friendly_id (4.0.6)
@@ -140,8 +139,8 @@ GEM
       netrc (~> 0.7.2)
       rest-client (~> 1.6.1)
       rubyzip
-    heroku-api (0.2.1)
-      excon (~> 0.13.3)
+    heroku-api (0.2.4)
+      excon (~> 0.14.0)
     heroku_san (3.0.1)
       activesupport
       heroku (>= 2)
@@ -192,13 +191,13 @@ GEM
     mysql2 (0.3.11)
     net-http-digest_auth (1.2.1)
     net-http-persistent (2.6)
-    net-scp (1.0.4)
-      net-ssh (>= 1.99.1)
     net-ssh (2.5.2)
     netrc (0.7.2)
     nokogiri (1.5.2)
     ntlm-http (0.1.1)
     orm_adapter (0.0.7)
+    polyamorous (0.5.0)
+      activerecord (~> 3.0)
     polyglot (0.3.3)
     possessive (1.0.0)
     powder (0.1.7)
@@ -289,6 +288,10 @@ GEM
       rack (~> 1.0)
       tilt (~> 1.1, != 1.3.0)
     sqlite3 (1.3.6)
+    squeel (1.0.2)
+      activerecord (~> 3.0)
+      activesupport (~> 3.0)
+      polyamorous (~> 0.5.0)
     tabs_on_rails (2.1.1)
     thin (1.3.1)
       daemons (>= 1.0.9)
@@ -373,6 +376,7 @@ DEPENDENCIES
   simple_enum
   simple_form
   spork (~> 1.0rc)
+  squeel
   tabs_on_rails
   taps!
   tinymce-rails

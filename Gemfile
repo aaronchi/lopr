@@ -22,6 +22,7 @@ gem 'friendly_id'
 gem 'kaminari'
 gem 'sanitize'
 gem 'simple_enum'
+gem 'squeel'
 gem 'validates_timeliness'
 gem 'validate_url'
 

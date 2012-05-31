@@ -27,7 +27,7 @@
   </div>
   <% else %>
   <% if i % rows == 1 %><div class="clear"></div><% end %>
-  <% if rows == 4 && i == 5 %><div class="col span<%= span %> bonus"></div><% end %>
+  
   <div class="col span<%= span %> bonus">
     <%= link_to_if current_user, image_tag(bonus.image_url(:medium)), download_bonus_path(bonus), :target => '_blank' %>
     <div class="entry content">

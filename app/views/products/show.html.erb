@@ -7,7 +7,7 @@
 </div>
 <%= render 'pages/bonus' if @product.id == 21 %>
 <div class="row">
-  <% Event.includes(:speaker).order("start_time").each_with_index do |event, i| %>
+  <% Event.includes(:speaker).where(:speaker_id.not_eq => nil).order("start_time").each_with_index do |event, i| %>
   <% if i % 5 == 0 %><div class="clear"></div><% end %>
   <div class="download col">
     <%= image_tag event.speaker.image_url, :class => 'image' %>
