@@ -7,6 +7,20 @@
     <h2><%= @event.current? ? @event.name : "Next LIVE Session in:" %></h2> 
 </div>
 <% end %>
+
+<% if Time.now - @event.start_time > 5.days %>
+  <div class="content">
+<center>
+<h3>This replay is no longer available.</h3>
+  <p class="large">
+    Want to own ALL the sessions in the Love On Purpose Revolution so you can gain the most learning and transformation? 
+  </p>
+  <p class="large">
+    Check out our limited time offers here:<br><strong><%= link_to root_url + '#offer', root_url + '#offer' %></strong>
+  </p>
+</center>
+</div>
+<% else %>
 <div class="clearfix">
     <div style="float:left;">
         <%= @event.over? ? embed_replay(@event) : embed_event(@event) %>
@@ -15,6 +29,8 @@
         <%= embed_questions @event unless @event.over? %>
     </div>
 </div>
+<% end %>
+
 <% else %>
 <h2>No events scheduled</h2>
 <% end %>
