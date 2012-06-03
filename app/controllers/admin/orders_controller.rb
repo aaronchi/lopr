@@ -1,5 +1,7 @@
 class Admin::OrdersController < Admin::ResourcesController
   
+  autocomplete :user, :email
+  
   protected
   
   def collection

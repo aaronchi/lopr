@@ -3,7 +3,7 @@
   <%= div_for order, :class => 'record' do %>
     <div class="right"><%= order.order_id %></div>
     <div><strong><%= order.user.name %></strong> <small>(<%= order.user.email %>)</small></div>
-    <div class="right small"><%= l order.created_at, :format => :long %></div>
+    <div class="right small"><%= l order.created_at, :format => :long %> | <%= link_to "delete", resource_path(order), :method => :delete, :remote => true, :confirm => "Remove access for #{order.user.email}?" %></div>
     <small><%= order.product.name %></small>
   <% end %>
 <% end %>  

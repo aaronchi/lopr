@@ -1,8 +1,7 @@
 //= require cocoon
-//= require jquery-ui/jquery.ui.core
-//= require jquery-ui/jquery.ui.widget
-//= require jquery-ui/jquery.ui.mouse
-//= require jquery-ui/jquery.ui.sortable
+//= require jquery.ui.sortable
+//= require jquery.ui.autocomplete
+//= require autocomplete-rails
 //= require tinymce-jquery
 
 $(function() {

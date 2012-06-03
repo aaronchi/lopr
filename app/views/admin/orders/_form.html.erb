@@ -1,0 +1,8 @@
+<%= simple_form_for resource, :url => form_resource_path do |f| %>
+  <%= f.association :product, :collection => Product.all.map{|product| [product.name, product.product_id]} %>
+  <%= f.input :user_email, :url => autocomplete_user_email_admin_orders_path, :as => :autocomplete, :update_elements => {:id => '#order_user_id'} %>
+  <%= f.hidden_field :user_id %>
+  <div class="buttons">
+  <%= f.submit %>
+  </div>
+<% end %>

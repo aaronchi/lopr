@@ -26,7 +26,9 @@ Lopr::Application.routes.draw do
       put :sort, :on => :collection
     end
     resources :images
-    resources :orders
+    resources :orders do
+      get :autocomplete_user_email, :on => :collection
+    end
     root :to => 'application#dashboard'
   end
   post 'tinymce_assets' => 'admin/images#upload'

@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
 ruby '1.9.3'
-gem 'rails', '3.2.3'
+gem 'rails', '3.2.5'
 gem 'mysql2'
 gem 'settingslogic'
 gem 'rack-canonical-host'
@@ -32,7 +32,8 @@ gem 'inherited_resources'
 gem 'sentient_user'
 
 ## Views
-gem "cocoon"
+gem 'cocoon'
+gem 'rails3-jquery-autocomplete'
 gem 'simple_form'
 gem 'tabs_on_rails'
 
@@ -43,6 +44,7 @@ gem 'carrierwave'
   
 ## Asset Pipeline
 gem 'jquery-rails'
+gem 'jquery-ui-rails'
 gem 'tinymce-rails'
   gem 'tinymce-rails-imageupload'
 
