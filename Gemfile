@@ -7,8 +7,7 @@ gem 'settingslogic'
 gem 'rack-canonical-host'
 
 # Utility
-gem 'airbrake'
-#gem 'aweber'
+gem 'bugsnag'
 gem 'mechanize'
 gem 'possessive'
 

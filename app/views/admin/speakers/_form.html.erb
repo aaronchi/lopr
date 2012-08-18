@@ -3,6 +3,7 @@
   <%= f.input :name %>
   <%= image_tag(resource.image_url(:small)) if resource.image? %>
   <%= f.input :image, :as => :file %>
+  <%= f.input :remote_image_url %>
   <%= f.hidden_field :image_cache %>
   <%= f.input :short_bio, :input_html => {:rows => 3} %>
   <%= f.input :bio, :input_html => {:class => "tinymce"} %>

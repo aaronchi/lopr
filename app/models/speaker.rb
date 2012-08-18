@@ -7,7 +7,7 @@ class Speaker < ActiveRecord::Base
   acts_as_list
   
   ## Security
-  attr_accessible :name, :bio, :short_bio, :image, :image_cache, :as => :admin
+  attr_accessible :name, :bio, :short_bio, :image, :image_cache, :remote_image_url, :as => :admin
   
   ## Associations
   has_many :products
