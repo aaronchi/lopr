@@ -32,7 +32,7 @@ class User < ActiveRecord::Base
   end
   
   # Overide email confirmation if newsletter provider has been setup
-  def send_on_create_confirmation_instructions
+  def send_on_create_confirmation_instructions2
     if Rails.env.production?
       #Summit.find(summit_id).newsletter_provider.subscribe(self)
     else
