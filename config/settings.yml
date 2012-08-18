@@ -1,8 +1,7 @@
 defaults: &defaults
   domain: lopr.dev
   host: lopr.dev
-  assets:
-    storage: file
+  name: Sexy Younger You
   aws:
     key: AKIAJ4PXJBGOZ6U7VJBA
     secret: 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
@@ -23,7 +22,5 @@ test:
 
 production:
   <<: *defaults
-  domain: loveonpurposerevolution.com
-  host: www.loveonpurposerevolution.com
-  assets:
-    storage: fog
+  domain: sexyyoungeryou.herokuapp.com
+  host: sexyyoungeryou.herokuapp.com

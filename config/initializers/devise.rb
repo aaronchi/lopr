@@ -7,7 +7,7 @@ Devise.setup do |config|
   config.mailer_sender = "support@loveonpurposerevolution.com"
 
   # Configure the class responsible to send e-mails.
-  config.mailer = "Subscriber"
+  #config.mailer = "Subscriber"
 
   # ==> ORM configuration
   # Load and configure the ORM. Supports :active_record (default) and

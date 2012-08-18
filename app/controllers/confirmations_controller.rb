@@ -1,11 +1,6 @@
 # Stolen from:
 # https://github.com/plataformatec/devise/wiki/How-To:-Override-confirmations-so-users-can-pick-their-own-passwords-as-part-of-confirmation-activation
-
 class ConfirmationsController < Devise::ConfirmationsController
-  # Remove the first skip_before_filter (:require_no_authentication) if you
-  # don't want to enable logged users to access the confirmation page.
-  skip_before_filter :require_no_authentication
-  skip_before_filter :authenticate_user!
   
   def callback
     user = User.find_by_email(params[:email])
@@ -15,34 +10,54 @@ class ConfirmationsController < Devise::ConfirmationsController
       redirect_to root_path
     end
   end
-
+  
   # PUT /resource/confirmation
   def update
-    if resource.update_attributes(params[:user])
-      do_confirm
-    else
-      do_show
+    with_unconfirmed_confirmable do
+      if @confirmable.update_attributes(params[:user])
+        do_confirm
+      else
+        do_show
+      end
     end
   end
 
-  # GET /resource/confirmation?confirmation_token=abcdef
-  def show 
-    render resource.persisted? ? :show : :new
+  def show
+    with_unconfirmed_confirmable do
+      if @confirmable.encrypted_password.blank?
+        do_show
+      else
+        do_confirm
+      end
+    end
+    if !@confirmable.errors.empty?
+      render :new
+    end
   end
 
   protected
   
-  def resource
-    @confirmable ||= User.where(:confirmation_token => params[:confirmation_token]).first_or_initialize
+  def with_unconfirmed_confirmable
+    @confirmable = User.find_or_initialize_with_error_by(:confirmation_token, params[:confirmation_token])
+    if @confirmable.persisted?
+      @confirmable.only_if_unconfirmed {yield}
+    end
   end
 
   def do_show
+    self.resource = @confirmable
     render :show
   end
 
   def do_confirm
     @confirmable.confirm!
     set_flash_message :notice, :confirmed
-    sign_in_and_redirect(resource_name, @confirmable)
+    sign_in('user', @confirmable) 
+    redirect_to root_url
   end
+
+  def after_resending_confirmation_instructions_path_for(resource_name)
+    new_session_path(:user)
+  end
+  
 end

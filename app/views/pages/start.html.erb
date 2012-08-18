@@ -2,7 +2,7 @@
 <div class="row">
     <div class="col">
       <div class="video">
-        <%= embed_video 'rfJyXsw9bx0' %>
+        <%= embed_video '' %>
       </div>
     </div>
     
@@ -19,19 +19,19 @@
   
 <div class="box grey center">
   <h2><strong>Congratulations!</strong></h2>
-  <h2>Welcome to the Love On Purpose Revolution where you can<br>access everything you need to Spring Into Love!</h2>
+  <h2>Welcome to Sexy Younger You! where you can access everything you need to Create More Healthy, Vibrant and Sexy No Matter What Your Age</h2>
 </div>
 
-<%= render 'bonus' if Time.now < Time.parse('2012/04/16 00:00:00').in_time_zone("Pacific Time (US & Canada)") %>
+<%= render 'bonus' if Time.now < Time.parse('2012/09/17 00:00:00').in_time_zone("Pacific Time (US & Canada)") %>
 
 <div class="box center">
-  <h1>Begins on Monday, April 16th!</h1>
+  <h1>Begins on Monday, September 17th!</h1>
   <br>
   <p class="big">
-Make sure to be with us LIVE every night <strong>Monday through Friday at 5pm Pacific/8pm Eastern</strong> starting April 16th. A top expert on Love, Dating, Sex and Relationships will share their unique tools, tips and techniques to show you how to create love on purpose.
+Make sure to be with us LIVE every night <strong>Monday through Friday at 5pm Pacific/8pm Eastern</strong> starting September 17th. Top experts on Health, Sex, Nutrition and Fitness will share their unique tools, tips and techniques to show you how to create a vibrant, sexy younger you.
  <br><br>
 You can listen via the web from your computer or your telephone.<br>
-Go to: <%= link_to 'www.loveonpurposerevolution.com/now', events_path %><br>
+Go to: <%= link_to 'www.sexyyoungeryou.com/now', events_path %><br>
 for details on how to access each session.</p>
 </div>
 
@@ -39,13 +39,14 @@ for details on how to access each session.</p>
   IMPORTANT: This page contains special prices on the lifetime access packages to the Love On Purpose Revolution sessions. Be sure to read this entire page so you don’t miss this special pricing!
 </div>
 
+<!--
 <div class="welcome">
-  <%= image_tag 'couples.jpg' %>
+  <%#= image_tag 'couples.jpg' %>
   <div class="content">
-  <%= raw Page.first.body %>
+  <%#= raw Page.first.body %>
   </div>
 </div>
-
+-->
 
 <div class="box center">
  <h3>There are three lifetime access packages available for you.<br>
@@ -53,21 +54,6 @@ Choose the one that makes the most sense.</h3>
   </div>
   
   <%= render 'products' %>
-  
-  <% sponsor = Sponsor.find(31) %>
-  <a name="soulkuoffer"></a>
-  <div class="special big content">
-    <%= link_to image_tag(sponsor.image_url), sponsor.url, :target => '_blank' %>
-    <h2>SPECIAL OFFER</h2>
-    <p>SoulKu cards are an innovative way of working with the energy of love. These beautifully designed cards contain a powerful quote from each of the 25 experts participating in this years’ Love on Purpose Revolution.  Each card offers several unique opportunities to invite more love into your life.</p>
-    <p>➜ Enjoy the Love: Keep your favorite cards for daily affirmation and inspiration Ignite a new level of loving awareness in your life.
-</p><p>
-➜ Say it Forward: Register your cards and pass them to friends or family. Sharing these cards helps to activate your capacity to receive love. 
-<p></p>
-➜ Keeping the love going and growing: Create your own messages of love on the SoulKu community blog and track your cards around the world. Adventure Awaits! 
-</p><p><strong><%= link_to "Get Your Cards Here", sponsor.url, :class => 'red', :target => '_blank' %></strong></p>
-</div>
-  
 
 <div class="box center grey">
   <h3>You will have lifetime access to these powerful speakers</h3>

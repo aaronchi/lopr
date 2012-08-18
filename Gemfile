@@ -1,8 +1,8 @@
 source 'https://rubygems.org'
 
 ruby '1.9.3'
-gem 'rails', '3.2.5'
-gem 'mysql2'
+gem 'rails', '3.2.8'
+gem 'pg'
 gem 'settingslogic'
 gem 'rack-canonical-host'
 
@@ -39,8 +39,7 @@ gem 'tabs_on_rails'
 
 ## Uploads
 gem 'carrierwave'
-  gem 'rmagick', :require => 'RMagick'
-  gem 'fog'
+  gem 'cloudinary'
   
 ## Asset Pipeline
 gem 'jquery-rails'
@@ -64,7 +63,7 @@ group :development do
   gem 'heroku'
     gem 'heroku_san'
     gem 'taps', :github => 'aaronchi/taps'
-  gem 'mailcatcher'
+  gem 'letter_opener'
   gem 'powder'
   gem 'rack-livereload'
 end

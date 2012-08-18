@@ -1,11 +1,11 @@
 <div id="footer">
-    <div class="left">
-        © <%= Time.now.year %> Moving Light Media, Inc. All Rights Reserved.
-    </div>
-    <div class="right">
-        <%= link_to 'Sponsors', sponsors_path %>
-        <% Page.active.each do |page| %>
-        <%= link_to page.title, page_path(page), :target => '_blank' %>
-        <% end %>
-    </div>
+  <div class="left">
+    © <%= Time.now.year %> Juvenescence. All Rights Reserved.
+  </div>
+  <div class="right">
+    <%= link_to 'Sponsors', sponsors_path %>
+    <% Page.active.each do |page| %>
+    <%= link_to page.title, page_path(page), :target => '_blank' %>
+    <% end %>
+  </div>
 </div>

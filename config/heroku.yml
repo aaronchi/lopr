@@ -10,5 +10,5 @@
 #     - <Heroku config:var name>: <Heroku config:var value>
 #
 production: 
-  app: lopr
+  app: sexyyoungeryou
   stack: cedar
