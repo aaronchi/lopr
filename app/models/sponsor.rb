@@ -1,7 +1,7 @@
 class Sponsor < ActiveRecord::Base
   
   ## Model
-  mount_uploader :image, SponsorUploader
+  mount_uploader :image, ImageUploader
   acts_as_list
 
   ## Security

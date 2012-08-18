@@ -3,7 +3,7 @@ class Speaker < ActiveRecord::Base
   ## Mmodel
   extend FriendlyId
   friendly_id :name, :use => :slugged
-  mount_uploader :image, AvatarUploader
+  mount_uploader :image, ImageUploader
   acts_as_list
   
   ## Security

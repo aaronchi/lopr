@@ -8,7 +8,6 @@ gem 'rack-canonical-host'
 
 # Utility
 gem 'bugsnag'
-gem 'mechanize'
 gem 'possessive'
 
 # Authentication

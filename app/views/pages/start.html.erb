@@ -63,7 +63,7 @@ Choose the one that makes the most sense.</h3>
   <% Speaker.all.each_with_index do |speaker, i| %>
     <div class="col speaker2">
       
-      <%= image_tag(speaker.image_url) %>
+      <%= cl_image_tag(speaker.image.filename, :width => 300, :height => 300, :crop => :fill, :gravity => :face) %>
       
       <div class="entry">
       <h3><%= speaker.name %></h3>
