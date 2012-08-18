@@ -1,7 +1,7 @@
 <%= tinymce %>
 <%= simple_form_for resource, :url => form_resource_path, :html => {:multipart => true} do |f| %>
   <%= f.input :name %>
-  <%= image_tag(resource.image_url(:small)) if resource.image? %>
+  <%= cl_image_tag(resource.image.filename, :width => 150, :height => 150, :crop => :fill, :gravity => :face) if resource.image? %>
   <%= f.input :image, :as => :file %>
   <%= f.input :remote_image_url %>
   <%= f.hidden_field :image_cache %>
