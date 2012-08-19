@@ -16,7 +16,7 @@ module Provider
     private
     
     def to_product(product)
-      {:name => product["ProductName"], :regular_price => product["ProductPrice"], :price => product["SalePrice"], :product_id => product["Id"], :cart_pid => product["VisibleId"]}
+      {:name => product["ProductName"], :price => product["ProductPrice"], :product_id => product["Id"], :cart_pid => product["VisibleId"]}
     end
     
     def client
