@@ -3,6 +3,7 @@ class Product < ActiveRecord::Base
   ## Mmodel
   extend FriendlyId
   friendly_id :name, :use => :slugged
+  acts_as_list :scope => :speaker_id
   
   ## Security
   attr_accessible :name, :title, :price, :regular_price, :product_id, :cart_pid, :digital_download, :youtube_id, :speaker_id, :short_description, :description, :redirect_url, :images_attributes, :as => :admin
@@ -18,6 +19,7 @@ class Product < ActiveRecord::Base
   validates_url :redirect_url, :allow_blank => true
   
   ## Scope
+  default_scope :order => 'position'
   scope :global, where(:speaker_id => nil)
   
   ## Callbacks
