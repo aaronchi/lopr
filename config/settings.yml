@@ -2,17 +2,15 @@ defaults: &defaults
   domain: lopr.dev
   host: lopr.dev
   name: Sexy Younger You
-  aws:
-    key: AKIAJ4PXJBGOZ6U7VJBA
-    secret: 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
   aweber:
-    key: AkF7gUyyb4BRvblnk83cei8w
-    secret: EvSThf3ZBSWWRPLD7VfwkKjk8ohRJud6Dstv7lu7
-    verifier: 3vk9zk
-    access_token: AgsE7lsgCyE4kPMwej43tJZU
-    access_secret: hmN2Ixd5rxt3zoWLeSVfYYpkCePxbZ5NnPhPqmfi
+    key: AkpsFMLYvEZmViiLZZ3GzTvh
+    secret: O92GYO04y9GKfa33nwqJh68ZOOpdRGk1DkStCgdC
+    access_token: AgGAr7PE25DpAEocf12J3OAg
+    access_secret: MEPJdAFFC1So1E5kO1W8fwhZXdulWpqhtLCerexN
   oneshoppingcart:
-    key: F81ADCC1F81042A8BCBCCFADEB0BE80C
+    id: 209677
+    mid: 5655D14A-8099-4AC3-A5FF-6D8F0F7123B8
+    key: 1E286772AAAA48359A5B18597B5B626A
 
 development:
   <<: *defaults

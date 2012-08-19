@@ -22,7 +22,7 @@ class Product < ActiveRecord::Base
   
   ## Methods
   def purchase_url
-    "http://www.1shoppingcart.com/SecureCart/SecureCart.aspx?mid=2FD65AE0-2662-4077-9A2F-360D2DE2C34B&pid=#{cart_pid}&bn=1"
+    "http://www.1shoppingcart.com/SecureCart/SecureCart.aspx?mid=#{Settings.oneshoppingcart.mid}&pid=#{cart_pid}&bn=1"
   end
   
 end
