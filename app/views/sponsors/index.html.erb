@@ -1,7 +1,7 @@
 <h2>Our Sponsors</h2>
 <% Sponsor.all.each do |sponsor| %>
   <div class="sponsor-box">
-    <%= link_to image_tag(sponsor.image_url), sponsor.url %>
+    <%= link_to cl_image_tag(sponsor.image.filename, :width => 150, :height => 150, :crop => :fill), sponsor.url %>
     <div class="wrap">
     <h3><%= link_to sponsor.name, sponsor.url %></h3>
     <div class="large"><%= sponsor.slogan %></div>
@@ -11,6 +11,7 @@
     </div>
   </div>
 <% end %>
+<!--
 <div class="sponsor-box">
   <%= link_to image_tag('sponsor.jpg',:style => 'margin-left:-6px;'), 'mailto:support@creatingloveonpurpose.com' %>
   <div class="wrap">
@@ -19,3 +20,4 @@
   </div>
   </div>
 </div>
+-->

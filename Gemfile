@@ -9,6 +9,7 @@ gem 'rack-canonical-host'
 # Utility
 gem 'bugsnag'
 gem 'possessive'
+gem 'weary', :github => 'bitium/weary'
 
 # Authentication
 gem 'devise'

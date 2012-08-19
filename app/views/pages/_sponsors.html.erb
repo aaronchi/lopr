@@ -4,7 +4,7 @@
 <div class="row">
   <% Sponsor.all.each_with_index do |sponsor, i| %>
   <div class="col span3 center">
-      <%= link_to_if current_user, image_tag(sponsor.image_url), sponsor.url, :target => "_blank" %>
+      <%= link_to_if current_user, cl_image_tag(sponsor.image.filename, :width => 150, :height => 150, :crop => :fill), sponsor.url, :target => "_blank" %>
   </div>
   <% end %>
 </div>

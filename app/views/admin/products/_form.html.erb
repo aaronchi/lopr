@@ -1,11 +1,12 @@
 <%= tinymce %>
 <%= simple_form_for resource, :url => form_resource_path, :html => {:multipart => true} do |f| %>
-  <%= f.input :name %>
+  <%= f.input :product_id, :collection => Provider::OneShoppingCart.new.products.map{|p| [p[:name], p[:product_id]]}, :label => 'Product' %>
+  <%#= f.input :name %>
   <%= f.input :title %>
-  <%= f.input :price %>
-  <%= f.input :regular_price %>
-  <%= f.input :product_id, :label => '1SC ProductID' %>
-  <%= f.input :cart_pid, :label => '1SC Cart PID' %>
+  <%#= f.input :price %>
+  <%#= f.input :regular_price %>
+  <%#= f.input :product_id, :label => '1SC ProductID' %>
+  <%#= f.input :cart_pid, :label => '1SC Cart PID' %>
   <%= f.input :digital_download %>
   <%= f.input :redirect_url %>
   <%= f.input :youtube_id %>

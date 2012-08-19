@@ -14,11 +14,17 @@ class Product < ActiveRecord::Base
     accepts_nested_attributes_for :images, :allow_destroy => true, :reject_if => lambda { |a| a[:image].blank? }
   
   ## Validations
-  validates_presence_of :name
+  validates_presence_of :product_id
   validates_url :redirect_url, :allow_blank => true
   
   ## Scope
   scope :global, where(:speaker_id => nil)
+  
+  ## Callbacks
+  before_validation :sync
+  def sync
+    self.assign_attributes(Provider::OneShoppingCart.new.product(product_id), :without_protection => true)
+  end
   
   ## Methods
   def purchase_url
