@@ -10,15 +10,12 @@
   </div>
 </div>
 <div class="box grey center">
-  <h2>25 Experts on Health, Sex, Nutrition and Fitness SHOW You
-  <br>
-  How to Create More Healthy, Vibrant & Sexy No Matter What Your Age... Sexy Younger You!</h2>
+  <h2>25 Experts on Health, Sex, Nutrition and Fitness SHOW You</h2>
+  <p>How to Create More Healthy, Vibrant & Sexy No Matter What Your Age... Sexy Younger You!</p>
 </div>
 <div class="row">
   <% Speaker.all.each_with_index do |speaker, i| %>
   <% if i % 3 == 0 %> <div class="clear"></div>
-  <% end %>
-  <% if i == 24 %> <div class="spaker col span4"></div>
   <% end %>
   <div class="spaker col span4">
     <%= cl_image_tag(speaker.image.filename, :width => 300, :height => 300, :crop => :fill, :gravity => :face) %>
