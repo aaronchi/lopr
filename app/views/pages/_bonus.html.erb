@@ -17,19 +17,19 @@
 <% end %>
 <div class="row">
   <% Bonus.all.each_with_index do |bonus, i| %>
-  <% if i== 0 %>
+  <% if i== -1 %>
   <div class="col bonus main">
-    <%= link_to_if current_user, image_tag(bonus.image_url), download_bonus_path(bonus), :target => '_blank' %>
+    <%= link_to_if current_user, cl_image_tag(bonus.image.filename, :width => 250, :height => 250, :crop => :fit).gsub('height="250"', '').html_safe, download_bonus_path(bonus), :target => '_blank' %>
     <div class="entry content">
       <h4><%= link_to_if current_user, bonus.name, download_bonus_path(bonus), :target => '_blank' %></h4>
       <%= raw bonus.short_description %>
     </div>
   </div>
   <% else %>
-  <% if i % rows == 1 %><div class="clear"></div><% end %>
+  <% if i % rows == 0 %><div class="clear"></div><% end %>
   
   <div class="col span<%= span %> bonus">
-    <%= link_to_if current_user, image_tag(bonus.image_url(:medium)), download_bonus_path(bonus), :target => '_blank' %>
+    <%= link_to_if current_user, cl_image_tag(bonus.image.filename, :width => 250, :height => 250, :crop => :fit).gsub(' height="250"', '').gsub(' width="250"', '').html_safe, download_bonus_path(bonus), :target => '_blank' %>
     <div class="entry content">
       <h4><%= link_to_if current_user, bonus.name, download_bonus_path(bonus), :target => '_blank' %></h4>
       <%= raw bonus.short_description %>
