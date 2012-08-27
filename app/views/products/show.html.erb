@@ -5,7 +5,7 @@
 <div class="content">
 <%= raw @product.description %>  
 </div>
-<%= render 'pages/bonus' if @product.id == 21 %>
+<%= render 'pages/bonus' if @product.id == 3 %>
 <div class="row">
   <% Event.includes(:speaker).where(:speaker_id.not_eq => nil).order("start_time").each_with_index do |event, i| %>
   <% if i % 5 == 0 %><div class="clear"></div><% end %>
