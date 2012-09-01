@@ -8,11 +8,15 @@ module Api
       @defaults[:key] = Settings.oneshoppingcart.key
     end
     
-    get :products, "/{uid}/Products/List" do |resource|
+    get :products, "/{uid}/Products/LIST" do |resource|
       resource.required :key
     end
     
-    get :product, "/{uid}/Products/{id}/Read" do |resource|
+    get :notify, "/{uid}/Notifications/TEST" do |resource|
+      resource.required :key
+    end
+    
+    get :product, "/{uid}/Products/{id}" do |resource|
       resource.required :key, :id
     end
   end
