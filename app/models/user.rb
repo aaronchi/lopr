@@ -18,7 +18,7 @@ class User < ActiveRecord::Base
   end
   
   def subscribe_to(list_id)
-    api = Api:Aweber.new
+    api = Api::Aweber.new
     api.subscribe(user, list)
   end
   
