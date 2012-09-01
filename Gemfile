@@ -90,7 +90,7 @@ group :test do
   # Guard
   gem 'growl'
   gem 'guard-bundler'
-  gem 'guard-livereload'
+  #gem 'guard-livereload'
   gem 'guard-pow'
   gem 'guard-sass'
   gem 'guard-spork'

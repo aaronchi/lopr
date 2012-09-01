@@ -14,10 +14,6 @@ class ProductsController < ApplicationController
     session[:user_id] = current_user.id
     redirect_to resource.purchase_url
   end
-    
-  def notify
-    raise params.inspect
-  end
   
   def callback
     order = Order.where(:order_id => params['orderID']).first_or_create({
