@@ -18,8 +18,8 @@ class User < ActiveRecord::Base
   end
   
   def subscribe_to(list_id)
-    api = Api::Aweber.new
-    api.subscribe(user, list)
+    provider = Provider::Aweber.new
+    provider.subscribe(self, list_id)
   end
   
   ## Enable password after confirmation

@@ -1,4 +1,4 @@
-module Api
+module Provider
   class Aweber
     
     def subscribe(user, list_id)
