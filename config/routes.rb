@@ -39,12 +39,12 @@ Lopr::Application.routes.draw do
   
   resources :products, :only => :show do 
     get :buy, :on => :member
-    get :order, :on => :collection
+    get :notify, :on => :collection
     resources :downloads, :only => :show
   end
   resources :bonuses, :only => :show
   resources :sponsors, :only => :index
-  post 'products/callback' => "products#callback"
+  #post 'products/callback' => "products#callback"
   get 'welcome' => 'pages#welcome', :as => :welcome
   get 'thanks' => 'pages#thanks', :as => :thanks
   match 'replay:id' => 'events#show', :as => :event
