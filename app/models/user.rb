@@ -9,15 +9,17 @@ class User < ActiveRecord::Base
   ## Associations
   has_many :orders
   
-  ## Scopes
-  scope :unsubscribed, where(:subscribed => false, :confirmation_token => nil)
-  
   def first_name
     name.split(' ').first
   end
   
   def to_email
     "#{name} <#{email}>"
+  end
+  
+  def subscribe_to(list_id)
+    api = Api:Aweber.new
+    api.subscribe(user, list)
   end
   
   ## Enable password after confirmation
@@ -32,9 +34,9 @@ class User < ActiveRecord::Base
   end
   
   # Overide email confirmation if newsletter provider has been setup
-  def send_on_create_confirmation_instructions2
+  def send_on_create_confirmation_instructions
     if Rails.env.production?
-      #Summit.find(summit_id).newsletter_provider.subscribe(self)
+      subscribe_to(Settings.aweber.list_id)
     else
       send_devise_notification(:confirmation_instructions)
     end

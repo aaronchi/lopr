@@ -13,6 +13,8 @@ gem 'weary', :github => 'bitium/weary'
 
 # Authentication
 gem 'devise'
+  gem 'omniauth'
+  gem 'omniauth-oauth'
 
 ## Models
 gem 'acts_as_list'

@@ -3,10 +3,12 @@ defaults: &defaults
   host: lopr.dev
   name: Sexy Younger You
   aweber:
+    id: 675531
     key: AkpsFMLYvEZmViiLZZ3GzTvh
     secret: O92GYO04y9GKfa33nwqJh68ZOOpdRGk1DkStCgdC
     access_token: AgGAr7PE25DpAEocf12J3OAg
     access_secret: MEPJdAFFC1So1E5kO1W8fwhZXdulWpqhtLCerexN
+    list_id: 2466651
   oneshoppingcart:
     id: 209677
     mid: 5655D14A-8099-4AC3-A5FF-6D8F0F7123B8
