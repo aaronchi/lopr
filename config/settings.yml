@@ -22,5 +22,5 @@ test:
 
 production:
   <<: *defaults
-  domain: sexyyoungeryou.herokuapp.com
-  host: sexyyoungeryou.herokuapp.com
+  domain: sexyyoungeryou.com
+  host: www.sexyyoungeryou.com
