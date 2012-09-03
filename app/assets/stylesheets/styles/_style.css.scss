@@ -27,6 +27,12 @@
   .right {
     a {margin-left:12px;}
   }
+  .note {
+    margin-top:12px;
+    float:left;
+    @include pie-clearfix;
+    color:#999;
+  }
 }
 
 .row {margin-left:-44px;@include pie-clearfix;
