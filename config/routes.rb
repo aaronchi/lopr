@@ -43,7 +43,7 @@ Lopr::Application.routes.draw do
   end
   resources :bonuses, :only => :show
   resources :sponsors, :only => :index
-  #post 'products/callback' => "products#callback"
+  post 'products/callback' => "products#callback"
   get 'orders/notify' => "orders#notify"
   get 'welcome' => 'pages#welcome', :as => :welcome
   get 'thanks' => 'pages#thanks', :as => :thanks
