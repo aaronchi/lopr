@@ -62,9 +62,8 @@ group :production do
 end
 
 group :development do
-  gem 'heroku'
-    gem 'heroku_san'
-    gem 'taps', :github => 'aaronchi/taps'
+  gem 'heroku_san'
+  gem 'taps', :github => 'aaronchi/taps'
   gem 'letter_opener'
   gem 'powder'
   gem 'rack-livereload'
