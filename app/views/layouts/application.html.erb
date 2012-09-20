@@ -15,7 +15,7 @@
       <% end %>
       <%= yield %>
       <%= render 'footer' %>
-      <%#= render 'tracking' if Rails.env.production? %> 
+      <%= render 'tracking' if Rails.env.production? %> 
     </div>
   </body>
 </html>
