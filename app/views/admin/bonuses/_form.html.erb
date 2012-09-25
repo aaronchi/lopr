@@ -6,7 +6,7 @@
   <%= f.hidden_field :image_cache %>
   <% if f.object.download %>
   <div class="input">
-    <small class="indent"><%= f.object.download.asset_url.split('/').last %></small>
+    <small class="indent"><%= link_to f.object.download.filename, bonus_path(f.object) %></small>
   </div>
   <% else %>
   <%= f.input :url %>

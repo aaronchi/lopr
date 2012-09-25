@@ -12,10 +12,7 @@ class DownloadsController < ApplicationController
   
   def show
     download = Download.find(params[:id])
-    uploader = download.asset 
-    uploader.retrieve_from_store!(File.basename(download.asset.url))
-    uploader.cache_stored_file!
-    send_file uploader.file.path
+    send_data open(download.asset).read, :filename => download.filename
   end
   
 end
