@@ -18,8 +18,8 @@ module ApplicationHelper
     html = "<center>"
     html += %(<h4 class="black"><strong>Click the Add to Cart Button Now<br>and Let's Get Started!</strong></h4>) if extra
     html += link_to image_tag('add-to-cart.png', :width => 280), @product.product_id ? buy_product_path(@product) : @product.redirect_url
-    html += %(<div class="small"><strong>Outside the US? International orders easiest via PayPal.</strong></div>
-      <div class="large"><em>As this is a Limited Time Special Offer, All Sales Are Final</em></div>)
+    html += %(<div class="small"><strong>Outside the US? International orders easiest via PayPal.</strong></div>)
+    #  <div class="large"><em>As this is a Limited Time Special Offer, All Sales Are Final</em></div>)
     html += %(<div class="larger"><em>Instant Download / Digital Delivery</em></div>) if @product.digital_download
     html += %(</center>)
     html.html_safe
