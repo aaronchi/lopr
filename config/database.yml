@@ -13,7 +13,7 @@ development:
   encoding: utf8
   reconnect: false
   database: lopr_development
-  pool: 5
+  pool: 1
   username: root
   password:
   socket: /tmp/mysql.sock
@@ -26,7 +26,7 @@ test:
   encoding: utf8
   reconnect: false
   database: lopr_test
-  pool: 5
+  pool: 1
   username: root
   password:
   socket: /tmp/mysql.sock
@@ -36,7 +36,7 @@ production:
   encoding: utf8
   reconnect: false
   database: lopr_production
-  pool: 5
+  pool: 1
   username: root
   password:
   socket: /tmp/mysql.sock
