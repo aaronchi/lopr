@@ -5,6 +5,9 @@ class Order < ActiveRecord::Base
   attr_accessor :user_email
   attr_accessible :product_id, :user_id, :user_email, :as => :admin
   
+  ## Validations
+  validates_presence_of :user_id, :product_id
+  
   ## Associations
   belongs_to :product, :primary_key => :product_id
   belongs_to :user
