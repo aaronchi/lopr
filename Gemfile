@@ -62,6 +62,7 @@ end
 
 group :development do
   gem 'heroku_san'
+    gem 'heroku'
   #gem 'taps', :github => 'aaronchi/taps'
   gem 'letter_opener'
   gem 'rack-livereload'
