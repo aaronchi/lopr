@@ -1,10 +1,9 @@
 source 'https://rubygems.org'
 
 ruby '1.9.3'
-gem 'rails', '3.2.8'
+gem 'rails', '3.2.11'
 gem 'pg'
 gem 'settingslogic'
-gem 'rack-canonical-host'
 
 # Utility
 gem 'bugsnag'
@@ -63,9 +62,8 @@ end
 
 group :development do
   gem 'heroku_san'
-  gem 'taps', :github => 'aaronchi/taps'
+  #gem 'taps', :github => 'aaronchi/taps'
   gem 'letter_opener'
-  gem 'powder'
   gem 'rack-livereload'
 end
 
@@ -82,12 +80,11 @@ group :test do
   
   # Testing Tools
   gem 'capybara'
-  gem 'spork', '~> 1.0rc'
+  gem 'spork-rails'
   #gem 'shoulda-context'
   #gem 'shoulda-matchers'
 
   # Guard
-  gem 'growl'
   gem 'guard-bundler'
   #gem 'guard-livereload'
   gem 'guard-pow'
